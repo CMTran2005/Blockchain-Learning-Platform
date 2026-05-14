@@ -7,10 +7,12 @@ Hệ thống website học trực tuyến phi tập trung (dApp). Dự án cho p
 ## I. Kiến trúc hệ thống (System Architecture)
 Dự án được vận hành theo mô hình 3 lớp tách biệt nhằm tối ưu hóa việc cộng tác qua GitHub:
 - **Frontend:** React.js - Giao diện người dùng và trải nghiệm học tập.
-- **Backend Bridge**: Ethers.js (Thư viện trung gian kết nối Web và Blockchain).
-- **Smart Contract:** Solidity - Ngôn ngữ lập trình xử lý logic và lưu trữ trên Blockchain.
+- **Backend Bridge**: Express.js + Ethers.js - API server kết nối Frontend với Blockchain và Database.
+- **Smart Contract:** Solidity - Ngôn ngữ lập trình xử lý logic và lưu trữ giao dịch trên Blockchain.
 - **Local Network:** Ganache - Mạng Blockchain giả lập dùng để triển khai và thử nghiệm.
 - **Wallet:** MetaMask - Công cụ quản lý ví và xác thực các giao dịch tài chính.
+- **Database:** Firebase Firestore - Lưu trữ metadata (khóa học, user, enrollment, review).
+- **File Storage:** Pinata IPFS - Lưu trữ phi tập trung cho ảnh, video, PDF (thay Cloudinary).
 
 ---
 
@@ -25,13 +27,14 @@ Dự án được vận hành theo mô hình 3 lớp tách biệt nhằm tối �
   - Xuất file ABI và địa chỉ Contract sau khi deploy thành công lên Ganache.
 
 ### 2. Backend Developer (Integration & Logic)
-- **Thư mục quản lý:** `frontend/src/utils/`
+- **Thư mục quản lý:** `backend/`
 - **Nhiệm vụ:**
-  - Thiết lập `contract.js` để tạo cầu nối giữa giao diện và Smart Contract.
-  - Xây dựng logic `connectWallet.js` quản lý việc đăng nhập ví người dùng.
-  - Quản lý Metadata: Xây dựng file `courses.json` lưu trữ thông tin chi tiết (tên, mô tả, ảnh, link video) để tối ưu chi phí lưu trữ Blockchain.
-  - Phân quyền nội dung: Kiểm tra trạng thái mua hàng để mở khóa trình phát video bài học.
-  - Xử lý bộ lắng nghe sự kiện (Event Listener) để phản hồi giao dịch thời gian thực.
+  - Xây dựng 36 REST API endpoints (Courses, Users, Enrollments, Lessons, Reviews, Upload).
+  - Tích hợp **Ethers.js** để verify giao dịch blockchain từ Ganache.
+  - Tích hợp **Pinata IPFS** để upload và quản lý file phi tập trung.
+  - Quản lý **Firebase Firestore** cho metadata (user, khóa học, enrollment, review).
+  - Xử lý xác thực qua **wallet address** (không dùng username/password).
+  - Xây dựng middleware: auth (wallet verification), validation, error handling.
 
 ### 3. Frontend Developer (UI/UX)
 - **Thư mục quản lý:** `frontend/src/pages/` & `frontend/src/components/`

@@ -1,0 +1,3148 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -784.7952,
+    "scrollLeft": -101.7455,
+    "zoomLevel": 0.73,
+    "show": 295,
+    "database": 4,
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": 1,
+    "tableNameCase": 4,
+    "columnNameCase": 2,
+    "bracketType": 1,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": false,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": -1,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "i--eOXZGpqUYvpjymF0KJ",
+      "1B__LqNSjKqOCnMjKvc1Y",
+      "krz5FR7rlwlnQU6sWuEVC",
+      "cZT2tSro1RLIf7KYmzm55",
+      "b2ljB2m5P03p4OFfuoEnl"
+    ],
+    "relationshipIds": [
+      "fmMCCo8glp4tfAGigakpd",
+      "yaE1uw64lZZC8lU7G7EH9",
+      "qa_Yeulz8-jXzmOkk0P2l",
+      "0Q76jxOmlZd8kX5LvWyFI",
+      "uQpnb3LLl3qZi9bcxdqlQ",
+      "NdmE_jdh0qIkSVxAGAIhT",
+      "b3Oe1hPCD5kDj44faSCpA"
+    ],
+    "indexIds": [],
+    "memoIds": []
+  },
+  "collections": {
+    "tableEntities": {
+      "i--eOXZGpqUYvpjymF0KJ": {
+        "id": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "users",
+        "comment": "Cấu trúc dữ liệu cho một user trong hệ thống",
+        "columnIds": [
+          "QJsDIK7Yk9IJoI0X6szMW",
+          "UF2J5sABm1tUU-9UXlXMK",
+          "bR5nAL4Zf2JglIz_OwITG",
+          "Vmfp3Uwc_3eoR_X_aKW7V",
+          "TbhX-OmSdNcGes8hHeNSl",
+          "TRjswotLvwlPl2v1GP_fj",
+          "dSFsFljRXJ_qfxCMdEiTF",
+          "HKzYrSwHbQSmmBGlUe1Fw",
+          "65sfpHwPX2NpXqW4l_Efq",
+          "g4535LX_bhzajdzT5fzoV",
+          "Dz1H3HulrOx3KTPViSlgr",
+          "fHgnm0swh66ETJVj-vLkM",
+          "l6XT1O58kygGx82wqvQe3",
+          "0R2YJC4-53ZZTSXcgaG40",
+          "1Zbbt3JLdMpLWENU-Ec9f"
+        ],
+        "seqColumnIds": [
+          "QJsDIK7Yk9IJoI0X6szMW",
+          "UF2J5sABm1tUU-9UXlXMK",
+          "bR5nAL4Zf2JglIz_OwITG",
+          "Vmfp3Uwc_3eoR_X_aKW7V",
+          "TbhX-OmSdNcGes8hHeNSl",
+          "TRjswotLvwlPl2v1GP_fj",
+          "infTygnRRALWscdNXtD0p",
+          "dSFsFljRXJ_qfxCMdEiTF",
+          "HKzYrSwHbQSmmBGlUe1Fw",
+          "65sfpHwPX2NpXqW4l_Efq",
+          "g4535LX_bhzajdzT5fzoV",
+          "Dz1H3HulrOx3KTPViSlgr",
+          "fHgnm0swh66ETJVj-vLkM",
+          "l6XT1O58kygGx82wqvQe3",
+          "0R2YJC4-53ZZTSXcgaG40",
+          "1Zbbt3JLdMpLWENU-Ec9f",
+          "o9-R0J9KCNYLsoOn4PggO"
+        ],
+        "ui": {
+          "x": 1320.1096,
+          "y": 888.0411,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 243,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1778734026173,
+          "createAt": 1778289153959
+        }
+      },
+      "lizqb1p9EzArpdecf4HX_": {
+        "id": "lizqb1p9EzArpdecf4HX_",
+        "name": "courses",
+        "comment": "",
+        "columnIds": [
+          "5mt-Ya7Vj2y82q5x91LpV",
+          "vcCwbLwJPkFCazH1CyVtB",
+          "ma5dOTR72E8SJ3pUNt_Tw",
+          "YChZpNPZgFtsJlZm-ohFR",
+          "PCzZsq-S5WxmYvTUnOaxB",
+          "1l6KlXFvouV3ocfXmEOkI",
+          "BndQqD3GbDMUw5_b64_rR",
+          "cbsziEwDbhqUxssOYAeqE",
+          "jGd_2NAaZH2uBYolZRFsq",
+          "uGMmPwivzjw2nH78j9czu",
+          "y-bRc9DvdlWrCBpXRLRr4",
+          "RZbBvNkGXzxcd9dQwIxWG",
+          "_wp-2D97VnwLMjkxghnt0",
+          "mdgRuQMnHikHs3W3jvlGH",
+          "P6wLgGt20uhVVDfHB8WmW",
+          "z2ieFIlVKOUxjDQA9O8zq",
+          "rXCRmbLt6KfmSU4A6i_EZ",
+          "EdvYvUm4nNVwGPCN70Gn3",
+          "4nrvcMw29XgSFhennMuaI",
+          "YLQEc-wlBXEod8RWk5oCy",
+          "O_pxUEPkYvWuARRmPQLiY",
+          "vJpQRraBX7mP4fUy_89lf",
+          "JtTKK9MyYhiKMpXuQJiRS",
+          "4Fe3GcligwSqAKP4SJPoL",
+          "d9NjsPmzI_HLZCQazx7-3"
+        ],
+        "seqColumnIds": [
+          "5mt-Ya7Vj2y82q5x91LpV",
+          "vcCwbLwJPkFCazH1CyVtB",
+          "ma5dOTR72E8SJ3pUNt_Tw",
+          "YChZpNPZgFtsJlZm-ohFR",
+          "PCzZsq-S5WxmYvTUnOaxB",
+          "1l6KlXFvouV3ocfXmEOkI",
+          "BndQqD3GbDMUw5_b64_rR",
+          "cbsziEwDbhqUxssOYAeqE",
+          "jGd_2NAaZH2uBYolZRFsq",
+          "uGMmPwivzjw2nH78j9czu",
+          "y-bRc9DvdlWrCBpXRLRr4",
+          "RZbBvNkGXzxcd9dQwIxWG",
+          "_wp-2D97VnwLMjkxghnt0",
+          "mdgRuQMnHikHs3W3jvlGH",
+          "P6wLgGt20uhVVDfHB8WmW",
+          "z2ieFIlVKOUxjDQA9O8zq",
+          "rXCRmbLt6KfmSU4A6i_EZ",
+          "EdvYvUm4nNVwGPCN70Gn3",
+          "4nrvcMw29XgSFhennMuaI",
+          "YLQEc-wlBXEod8RWk5oCy",
+          "O_pxUEPkYvWuARRmPQLiY",
+          "vJpQRraBX7mP4fUy_89lf",
+          "JtTKK9MyYhiKMpXuQJiRS",
+          "4Fe3GcligwSqAKP4SJPoL",
+          "d9NjsPmzI_HLZCQazx7-3"
+        ],
+        "ui": {
+          "x": 45.7305,
+          "y": 453,
+          "zIndex": 219,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1778729223098,
+          "createAt": 1778290794723
+        }
+      },
+      "1B__LqNSjKqOCnMjKvc1Y": {
+        "id": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "courses",
+        "comment": "Cấu trúc dữ liệu cho một khóa học",
+        "columnIds": [
+          "wBgmg_MjWcbWGz4pgXApE",
+          "b4k0aR-59GcKCnEkZjvlU",
+          "JBMYJkAm5BWbcQYsH2sRq",
+          "9cQRWmIfUJWAUR03OrW7T",
+          "eE1Xj_E8D3PA7JuuU1J1C",
+          "Kxt25smZz3q1j3zMWn8Mt",
+          "UBrae50q_IPt-no1qax4M",
+          "TAOJ2dN7dEsu2hX__THdV",
+          "SEggi5BIPNd29pyLqole_",
+          "VrEhdGvDis96XpaedvvzO",
+          "zw-aARUtIIRvCKVCTMbFR",
+          "bhFkcOOORm0M1zQ0mxjrg",
+          "JR6sxwiyxassFD0i7YgEz",
+          "4NrqjEUAMlbo4Mv2Vw99Y",
+          "4k43UqqTeK2yRAWkQIezX",
+          "DtGbIT_F1K36zphnDIqIF",
+          "4wrPzawFC9hV0IouiwdZw",
+          "6OoVr6p7zan9jgwFg0SPS",
+          "w0D5OvckrCAj9IpFqaSLw",
+          "quULEtgwkOXSu0VKzFwx3",
+          "d1GyH49x90MVTQEolgVx2",
+          "4vu49kRUYh40vffPJel4D",
+          "7KGDtcSP_7_JgBVec4LKa"
+        ],
+        "seqColumnIds": [
+          "wBgmg_MjWcbWGz4pgXApE",
+          "b4k0aR-59GcKCnEkZjvlU",
+          "JBMYJkAm5BWbcQYsH2sRq",
+          "9cQRWmIfUJWAUR03OrW7T",
+          "eE1Xj_E8D3PA7JuuU1J1C",
+          "Kxt25smZz3q1j3zMWn8Mt",
+          "UBrae50q_IPt-no1qax4M",
+          "TAOJ2dN7dEsu2hX__THdV",
+          "SEggi5BIPNd29pyLqole_",
+          "VrEhdGvDis96XpaedvvzO",
+          "zw-aARUtIIRvCKVCTMbFR",
+          "bhFkcOOORm0M1zQ0mxjrg",
+          "JR6sxwiyxassFD0i7YgEz",
+          "4NrqjEUAMlbo4Mv2Vw99Y",
+          "4k43UqqTeK2yRAWkQIezX",
+          "DtGbIT_F1K36zphnDIqIF",
+          "4wrPzawFC9hV0IouiwdZw",
+          "6OoVr6p7zan9jgwFg0SPS",
+          "w0D5OvckrCAj9IpFqaSLw",
+          "quULEtgwkOXSu0VKzFwx3",
+          "d1GyH49x90MVTQEolgVx2",
+          "4vu49kRUYh40vffPJel4D",
+          "7KGDtcSP_7_JgBVec4LKa",
+          "AKKv5gZkW1xsSFnin0M1Q"
+        ],
+        "ui": {
+          "x": 8.1509,
+          "y": 8.0138,
+          "zIndex": 265,
+          "widthName": 60,
+          "widthComment": 185,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1778733986890,
+          "createAt": 1778729266313
+        }
+      },
+      "krz5FR7rlwlnQU6sWuEVC": {
+        "id": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "lessons",
+        "comment": "Cấu trúc dữ liệu cho một bài giảng trong khóa học",
+        "columnIds": [
+          "t69a94PnbAACjPAxZKkIV",
+          "4N9pFBeyv6YoZYM1D-hKl",
+          "E0wN3E-muhLwTuAAbK8GD",
+          "hgCVnfM-ndGsBymeEA-v9",
+          "cmr0T_h0mTHQoCz4bisgd",
+          "J-RdHsgAY4l9ZYbrHFReq",
+          "Ivoe4eRPoO4F1exlPb4hu",
+          "SWsUv6KDxMm_vhLJXidag",
+          "S699MHPKGzcpoBETMgBBE",
+          "jsGIZHJVjHaZnj7ro-kPS",
+          "E61wE1yK0TnruPop_YNkI",
+          "6X3-qBWApM0toeVCL2xnR",
+          "0Fnp0LVrC7CQ07aYHo4iV",
+          "hbScJMHLebFy06xVw8k0K",
+          "apkQFNW07Vd4TFHRmnr-r",
+          "B67BkKwOg7R-4jsACjCxx",
+          "aWwUa2SPr0fycABGqJL-5",
+          "wbqCHr7RTCSoNeV58L_T2",
+          "QSaIH61tSU-wREDzNa3y9",
+          "yIokRBn6WTtt34M0zb2q8",
+          "Y4byzzyHFvudp9J1VfsjW",
+          "cAQGQLhnVRgOkbfHKzliE"
+        ],
+        "seqColumnIds": [
+          "t69a94PnbAACjPAxZKkIV",
+          "4N9pFBeyv6YoZYM1D-hKl",
+          "RWR75K0EV0-_YyZHmUVAd",
+          "E0wN3E-muhLwTuAAbK8GD",
+          "hgCVnfM-ndGsBymeEA-v9",
+          "cmr0T_h0mTHQoCz4bisgd",
+          "J-RdHsgAY4l9ZYbrHFReq",
+          "Ivoe4eRPoO4F1exlPb4hu",
+          "SWsUv6KDxMm_vhLJXidag",
+          "S699MHPKGzcpoBETMgBBE",
+          "jsGIZHJVjHaZnj7ro-kPS",
+          "E61wE1yK0TnruPop_YNkI",
+          "6X3-qBWApM0toeVCL2xnR",
+          "0Fnp0LVrC7CQ07aYHo4iV",
+          "hbScJMHLebFy06xVw8k0K",
+          "apkQFNW07Vd4TFHRmnr-r",
+          "B67BkKwOg7R-4jsACjCxx",
+          "aWwUa2SPr0fycABGqJL-5",
+          "wbqCHr7RTCSoNeV58L_T2",
+          "QSaIH61tSU-wREDzNa3y9",
+          "yIokRBn6WTtt34M0zb2q8",
+          "Y4byzzyHFvudp9J1VfsjW",
+          "cAQGQLhnVRgOkbfHKzliE"
+        ],
+        "ui": {
+          "x": 769.3145,
+          "y": 29.7315,
+          "zIndex": 493,
+          "widthName": 60,
+          "widthComment": 270,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1778734001200,
+          "createAt": 1778731722443
+        }
+      },
+      "cZT2tSro1RLIf7KYmzm55": {
+        "id": "cZT2tSro1RLIf7KYmzm55",
+        "name": "enrollments",
+        "comment": "Cấu trúc dữ liệu cho một lần đăng ký / mua khóa học",
+        "columnIds": [
+          "nRXTKi3a1iLZiLdqhE8b6",
+          "xweVAUuSZpPMsIutbI_C8",
+          "RXTpu_LmLNqxlIoxz2fWh",
+          "bKgiPmiyR8Y8UtiScwSCb",
+          "Wb0fSKpKlxtg8qFa5cqcg",
+          "iFzI_TituvYCKDia2aJV5",
+          "hMfa2VwOfYD19bPNmm7Zx",
+          "TQCkRyRXNK10uET74rFrI",
+          "VF-5CrPDp9Z5kdfVOAtGv",
+          "_RvN6zrSrot2eFq-ikQjH",
+          "FZl8KGHdB_n8BMBJ68RLt",
+          "MoA8yVdRSYfsiy2r2-bRD",
+          "shSsMyHF8MrKTy1qRiOLO",
+          "Yfxouv1-88zEslqDrw7uH"
+        ],
+        "seqColumnIds": [
+          "nRXTKi3a1iLZiLdqhE8b6",
+          "xweVAUuSZpPMsIutbI_C8",
+          "8OqiFNevQA1d_JMazFYeJ",
+          "RXTpu_LmLNqxlIoxz2fWh",
+          "QSYq6kFWvJQAw7fSMiXb4",
+          "bKgiPmiyR8Y8UtiScwSCb",
+          "Wb0fSKpKlxtg8qFa5cqcg",
+          "iFzI_TituvYCKDia2aJV5",
+          "hMfa2VwOfYD19bPNmm7Zx",
+          "TQCkRyRXNK10uET74rFrI",
+          "VF-5CrPDp9Z5kdfVOAtGv",
+          "_RvN6zrSrot2eFq-ikQjH",
+          "FZl8KGHdB_n8BMBJ68RLt",
+          "MoA8yVdRSYfsiy2r2-bRD",
+          "shSsMyHF8MrKTy1qRiOLO",
+          "Yfxouv1-88zEslqDrw7uH"
+        ],
+        "ui": {
+          "x": 514.896,
+          "y": 714.0012,
+          "zIndex": 719,
+          "widthName": 65,
+          "widthComment": 284,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1778734010079,
+          "createAt": 1778732359042
+        }
+      },
+      "b2ljB2m5P03p4OFfuoEnl": {
+        "id": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "reviews",
+        "comment": "Cấu trúc dữ liệu cho một đánh giá khóa học",
+        "columnIds": [
+          "jycmx8WR-8deR5HDRhD4C",
+          "Fa74flaSqZjqsKPIEItW6",
+          "Yp6LhpUxu5OPscGgYnINR",
+          "pWoFuaJcEfmwoYgJivQDT",
+          "HrHf1kvHLLf8S-vb59f83",
+          "nNn4sI17EthmF8dUWsGZn",
+          "xDrWCLo7Bb9Iwf7cT1YnS",
+          "w-Kin--YXGsxfCvJLZ383",
+          "-WbuDPHH32gaa_B5qELQM",
+          "gkkwSC4OYSaXGrngUn4dh",
+          "Ng54S8hcv4Tf723IqyHVM",
+          "kwj7Wy8x9QE-JDCK-CCZW",
+          "GeMonKUdkAq3BlmgQxtJt",
+          "Z7Q8VabW-AiUQqpEHaAX2",
+          "ZAuMzjYWqgP0Ppw8do1HE",
+          "TWLazAa-cxuXMQZWOWz6B",
+          "h7Fne5mU3FaBB_xCptV5M",
+          "-So2VHCp1limFpbH1pHnq"
+        ],
+        "seqColumnIds": [
+          "jycmx8WR-8deR5HDRhD4C",
+          "7O8G92A3DzQxi1HUmm6bt",
+          "Fa74flaSqZjqsKPIEItW6",
+          "Yp6LhpUxu5OPscGgYnINR",
+          "070C4OsrtUKxV_12HgMVL",
+          "pWoFuaJcEfmwoYgJivQDT",
+          "kL0pU3wWnKfKuO0VKpe0B",
+          "HrHf1kvHLLf8S-vb59f83",
+          "nNn4sI17EthmF8dUWsGZn",
+          "xDrWCLo7Bb9Iwf7cT1YnS",
+          "w-Kin--YXGsxfCvJLZ383",
+          "-WbuDPHH32gaa_B5qELQM",
+          "gkkwSC4OYSaXGrngUn4dh",
+          "Ng54S8hcv4Tf723IqyHVM",
+          "kwj7Wy8x9QE-JDCK-CCZW",
+          "GeMonKUdkAq3BlmgQxtJt",
+          "Z7Q8VabW-AiUQqpEHaAX2",
+          "ZAuMzjYWqgP0Ppw8do1HE",
+          "TWLazAa-cxuXMQZWOWz6B",
+          "h7Fne5mU3FaBB_xCptV5M",
+          "-So2VHCp1limFpbH1pHnq"
+        ],
+        "ui": {
+          "x": 391.1153,
+          "y": 1429.6986,
+          "zIndex": 847,
+          "widthName": 60,
+          "widthComment": 234,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1778734018913,
+          "createAt": 1778732660423
+        }
+      }
+    },
+    "tableColumnEntities": {
+      "QJsDIK7Yk9IJoI0X6szMW": {
+        "id": "QJsDIK7Yk9IJoI0X6szMW",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "walletAddress",
+        "comment": "Địa chỉ ví Ethereum",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 75,
+          "widthComment": 104,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729051847,
+          "createAt": 1778289480525
+        }
+      },
+      "UF2J5sABm1tUU-9UXlXMK": {
+        "id": "UF2J5sABm1tUU-9UXlXMK",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "username",
+        "comment": "Tên hiển thị",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 63,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729058714,
+          "createAt": 1778289480691
+        }
+      },
+      "bR5nAL4Zf2JglIz_OwITG": {
+        "id": "bR5nAL4Zf2JglIz_OwITG",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "email",
+        "comment": "Email (tuỳ chọn)",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 87,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729066098,
+          "createAt": 1778289480871
+        }
+      },
+      "Vmfp3Uwc_3eoR_X_aKW7V": {
+        "id": "Vmfp3Uwc_3eoR_X_aKW7V",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "fullName",
+        "comment": "Họ tên đầy đủ",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778290900012,
+          "createAt": 1778289481029
+        }
+      },
+      "TbhX-OmSdNcGes8hHeNSl": {
+        "id": "TbhX-OmSdNcGes8hHeNSl",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "avatar",
+        "comment": "CID Pinata IPFS hoặc URL ảnh avatar",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 194,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729080831,
+          "createAt": 1778289481169
+        }
+      },
+      "TRjswotLvwlPl2v1GP_fj": {
+        "id": "TRjswotLvwlPl2v1GP_fj",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "bio",
+        "comment": "Giới thiệu bản thân",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 104,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729092371,
+          "createAt": 1778289481316
+        }
+      },
+      "infTygnRRALWscdNXtD0p": {
+        "id": "infTygnRRALWscdNXtD0p",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "purchasedCourses",
+        "comment": "Danh sách ID khóa học đã mua",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 99,
+          "widthComment": 167,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778290619468,
+          "createAt": 1778289481467
+        }
+      },
+      "dSFsFljRXJ_qfxCMdEiTF": {
+        "id": "dSFsFljRXJ_qfxCMdEiTF",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "enrolledCourses",
+        "comment": "IDs khóa học đã đăng ký / đang học",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 87,
+          "widthComment": 193,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729119004,
+          "createAt": 1778289481616
+        }
+      },
+      "HKzYrSwHbQSmmBGlUe1Fw": {
+        "id": "HKzYrSwHbQSmmBGlUe1Fw",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "completedCourses",
+        "comment": "IDs khóa học đã hoàn thành",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 100,
+          "widthComment": 151,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729129979,
+          "createAt": 1778289481772
+        }
+      },
+      "65sfpHwPX2NpXqW4l_Efq": {
+        "id": "65sfpHwPX2NpXqW4l_Efq",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "bookmarkedCourses",
+        "comment": "IDs khóa học đã bookmark",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 111,
+          "widthComment": 144,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729134539,
+          "createAt": 1778289481928
+        }
+      },
+      "g4535LX_bhzajdzT5fzoV": {
+        "id": "g4535LX_bhzajdzT5fzoV",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "role",
+        "comment": "'student' | 'instructor' | 'admin'",
+        "dataType": "VARCHAR",
+        "default": "student",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 161,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732153868,
+          "createAt": 1778289482076
+        }
+      },
+      "Dz1H3HulrOx3KTPViSlgr": {
+        "id": "Dz1H3HulrOx3KTPViSlgr",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "reputation",
+        "comment": "Điểm uy tín tích luỹ",
+        "dataType": "INT",
+        "default": "0",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 104,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729149188,
+          "createAt": 1778289482232
+        }
+      },
+      "l6XT1O58kygGx82wqvQe3": {
+        "id": "l6XT1O58kygGx82wqvQe3",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "joinedAt",
+        "comment": "Ngày đăng ký tài khoản",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 128,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729201728,
+          "createAt": 1778289482386
+        }
+      },
+      "0R2YJC4-53ZZTSXcgaG40": {
+        "id": "0R2YJC4-53ZZTSXcgaG40",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "lastLogin",
+        "comment": "Lần đăng nhập cuối",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 106,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729212219,
+          "createAt": 1778289482540
+        }
+      },
+      "1Zbbt3JLdMpLWENU-Ec9f": {
+        "id": "1Zbbt3JLdMpLWENU-Ec9f",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "isActive",
+        "comment": "Trạng thái tài khoản",
+        "dataType": "BOOLEAN",
+        "default": "TRUE",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 107,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729218248,
+          "createAt": 1778289538229
+        }
+      },
+      "fHgnm0swh66ETJVj-vLkM": {
+        "id": "fHgnm0swh66ETJVj-vLkM",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "totalSpent",
+        "comment": "Tổng ETH đã chi",
+        "dataType": "DECIMAL(20, 18)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 88,
+          "widthDataType": 90,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778729164477,
+          "createAt": 1778289539372
+        }
+      },
+      "o9-R0J9KCNYLsoOn4PggO": {
+        "id": "o9-R0J9KCNYLsoOn4PggO",
+        "tableId": "i--eOXZGpqUYvpjymF0KJ",
+        "name": "achievements",
+        "comment": "Danh sách thành tích",
+        "dataType": "JSON",
+        "default": "0",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 74,
+          "widthComment": 113,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778290725785,
+          "createAt": 1778289540916
+        }
+      },
+      "vcCwbLwJPkFCazH1CyVtB": {
+        "id": "vcCwbLwJPkFCazH1CyVtB",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "title",
+        "comment": "Tên khóa học",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 72,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291249793,
+          "createAt": 1778290801651
+        }
+      },
+      "ma5dOTR72E8SJ3pUNt_Tw": {
+        "id": "ma5dOTR72E8SJ3pUNt_Tw",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "description",
+        "comment": "Mô tả",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 61,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291252949,
+          "createAt": 1778290801888
+        }
+      },
+      "YChZpNPZgFtsJlZm-ohFR": {
+        "id": "YChZpNPZgFtsJlZm-ohFR",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "instructor",
+        "comment": "Tên giảng viên",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 78,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291259688,
+          "createAt": 1778290802097
+        }
+      },
+      "PCzZsq-S5WxmYvTUnOaxB": {
+        "id": "PCzZsq-S5WxmYvTUnOaxB",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "price",
+        "comment": "Giá",
+        "dataType": "DECIMAL(20, 18)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 90,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291262711,
+          "createAt": 1778290802280
+        }
+      },
+      "1l6KlXFvouV3ocfXmEOkI": {
+        "id": "1l6KlXFvouV3ocfXmEOkI",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "blockchainCourseId",
+        "comment": "ID trên blockchain",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 106,
+          "widthComment": 98,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291274070,
+          "createAt": 1778290802457
+        }
+      },
+      "BndQqD3GbDMUw5_b64_rR": {
+        "id": "BndQqD3GbDMUw5_b64_rR",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "category",
+        "comment": "Thể loại",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291281206,
+          "createAt": 1778290802592
+        }
+      },
+      "cbsziEwDbhqUxssOYAeqE": {
+        "id": "cbsziEwDbhqUxssOYAeqE",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "level",
+        "comment": "Mức độ",
+        "dataType": "ENUM('beginner', 'intermediate', 'advanced')",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 237,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291510889,
+          "createAt": 1778290802758
+        }
+      },
+      "jGd_2NAaZH2uBYolZRFsq": {
+        "id": "jGd_2NAaZH2uBYolZRFsq",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "duration",
+        "comment": "Thời gian học",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 74,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291516337,
+          "createAt": 1778290802894
+        }
+      },
+      "uGMmPwivzjw2nH78j9czu": {
+        "id": "uGMmPwivzjw2nH78j9czu",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "image",
+        "comment": "URL ảnh từ Cloudinary",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 121,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291524974,
+          "createAt": 1778290803055
+        }
+      },
+      "y-bRc9DvdlWrCBpXRLRr4": {
+        "id": "y-bRc9DvdlWrCBpXRLRr4",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "thumbnail",
+        "comment": "URL thumbnail",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 80,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291533918,
+          "createAt": 1778290803203
+        }
+      },
+      "RZbBvNkGXzxcd9dQwIxWG": {
+        "id": "RZbBvNkGXzxcd9dQwIxWG",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "content",
+        "comment": "Nội dung khóa học",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 104,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291540454,
+          "createAt": 1778290803360
+        }
+      },
+      "_wp-2D97VnwLMjkxghnt0": {
+        "id": "_wp-2D97VnwLMjkxghnt0",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "videoUrl",
+        "comment": "URL video giới thiệu",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 109,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291549188,
+          "createAt": 1778290803514
+        }
+      },
+      "mdgRuQMnHikHs3W3jvlGH": {
+        "id": "mdgRuQMnHikHs3W3jvlGH",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "lessonIds",
+        "comment": "Danh sách ID của Lesson",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 133,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291579276,
+          "createAt": 1778290803665
+        }
+      },
+      "P6wLgGt20uhVVDfHB8WmW": {
+        "id": "P6wLgGt20uhVVDfHB8WmW",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "rating",
+        "comment": "Đánh giá trung bình",
+        "dataType": "DECIMAL(2,2)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 108,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291596344,
+          "createAt": 1778290803812
+        }
+      },
+      "z2ieFIlVKOUxjDQA9O8zq": {
+        "id": "z2ieFIlVKOUxjDQA9O8zq",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "averageRating",
+        "comment": "Average rating",
+        "dataType": "DECIMAL(2,2)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 78,
+          "widthComment": 80,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291615201,
+          "createAt": 1778290843807
+        }
+      },
+      "rXCRmbLt6KfmSU4A6i_EZ": {
+        "id": "rXCRmbLt6KfmSU4A6i_EZ",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "reviewCount",
+        "comment": "Số lượng đánh giá",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 68,
+          "widthComment": 99,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291605784,
+          "createAt": 1778290843956
+        }
+      },
+      "EdvYvUm4nNVwGPCN70Gn3": {
+        "id": "EdvYvUm4nNVwGPCN70Gn3",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "enrolledCount",
+        "comment": "Số học viên đã đăng ký",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 78,
+          "widthComment": 125,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291629913,
+          "createAt": 1778290844116
+        }
+      },
+      "4nrvcMw29XgSFhennMuaI": {
+        "id": "4nrvcMw29XgSFhennMuaI",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "certificateRewardable",
+        "comment": "Có cấp chứng chỉ không",
+        "dataType": "BOOLEAN",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 115,
+          "widthComment": 130,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291641808,
+          "createAt": 1778290844276
+        }
+      },
+      "YLQEc-wlBXEod8RWk5oCy": {
+        "id": "YLQEc-wlBXEod8RWk5oCy",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "prerequisites",
+        "comment": "Các khóa học cần hoàn thành trước",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 70,
+          "widthComment": 190,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291651637,
+          "createAt": 1778290844432
+        }
+      },
+      "O_pxUEPkYvWuARRmPQLiY": {
+        "id": "O_pxUEPkYvWuARRmPQLiY",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "tags",
+        "comment": "Tags/keywords",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 80,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291660327,
+          "createAt": 1778290844580
+        }
+      },
+      "vJpQRraBX7mP4fUy_89lf": {
+        "id": "vJpQRraBX7mP4fUy_89lf",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "status",
+        "comment": "Trạng thái",
+        "dataType": "ENUM('active', 'inactive', 'archived')",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 187,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291720885,
+          "createAt": 1778290861916
+        }
+      },
+      "JtTKK9MyYhiKMpXuQJiRS": {
+        "id": "JtTKK9MyYhiKMpXuQJiRS",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "createdAt",
+        "comment": "Ngày tạo",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291726981,
+          "createAt": 1778290862077
+        }
+      },
+      "4Fe3GcligwSqAKP4SJPoL": {
+        "id": "4Fe3GcligwSqAKP4SJPoL",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "updatedAt",
+        "comment": "Ngày cập nhật",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 79,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291734190,
+          "createAt": 1778290862233
+        }
+      },
+      "d9NjsPmzI_HLZCQazx7-3": {
+        "id": "d9NjsPmzI_HLZCQazx7-3",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "createdBy",
+        "comment": "Người tạo",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291740864,
+          "createAt": 1778290871646
+        }
+      },
+      "5mt-Ya7Vj2y82q5x91LpV": {
+        "id": "5mt-Ya7Vj2y82q5x91LpV",
+        "tableId": "lizqb1p9EzArpdecf4HX_",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778291810065,
+          "createAt": 1778291810065
+        }
+      },
+      "wBgmg_MjWcbWGz4pgXApE": {
+        "id": "wBgmg_MjWcbWGz4pgXApE",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "courseId",
+        "comment": "Firestore document ID",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 120,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731118332,
+          "createAt": 1778729323457
+        }
+      },
+      "JBMYJkAm5BWbcQYsH2sRq": {
+        "id": "JBMYJkAm5BWbcQYsH2sRq",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "blockchainCourseId",
+        "comment": "ID trên Smart Contract",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 106,
+          "widthComment": 121,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731127100,
+          "createAt": 1778729323604
+        }
+      },
+      "9cQRWmIfUJWAUR03OrW7T": {
+        "id": "9cQRWmIfUJWAUR03OrW7T",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "title",
+        "comment": "Tên khóa học",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 72,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731144118,
+          "createAt": 1778729323797
+        }
+      },
+      "eE1Xj_E8D3PA7JuuU1J1C": {
+        "id": "eE1Xj_E8D3PA7JuuU1J1C",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "description",
+        "comment": "Mô tả chi tiết",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 61,
+          "widthComment": 72,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731151403,
+          "createAt": 1778729324300
+        }
+      },
+      "Kxt25smZz3q1j3zMWn8Mt": {
+        "id": "Kxt25smZz3q1j3zMWn8Mt",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "instructor",
+        "comment": "Tên / wallet giảng viên",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 121,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731178356,
+          "createAt": 1778729324501
+        }
+      },
+      "UBrae50q_IPt-no1qax4M": {
+        "id": "UBrae50q_IPt-no1qax4M",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "price",
+        "comment": "Giá ETH",
+        "dataType": "DECIMAL(20,18)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 87,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731197002,
+          "createAt": 1778730922813
+        }
+      },
+      "TAOJ2dN7dEsu2hX__THdV": {
+        "id": "TAOJ2dN7dEsu2hX__THdV",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "category",
+        "comment": "Thể loại",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731202349,
+          "createAt": 1778730922989
+        }
+      },
+      "SEggi5BIPNd29pyLqole_": {
+        "id": "SEggi5BIPNd29pyLqole_",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "level",
+        "comment": "'beginner' | 'intermediate' | 'advanced'",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 203,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732169662,
+          "createAt": 1778730923225
+        }
+      },
+      "VrEhdGvDis96XpaedvvzO": {
+        "id": "VrEhdGvDis96XpaedvvzO",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "duration",
+        "comment": "Tổng thời gian học (giờ)",
+        "dataType": "DECIMAL(10,2)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 130,
+          "widthDataType": 81,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731369776,
+          "createAt": 1778730923472
+        }
+      },
+      "zw-aARUtIIRvCKVCTMbFR": {
+        "id": "zw-aARUtIIRvCKVCTMbFR",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "imageCid",
+        "comment": "CID Pinata IPFS ảnh bìa",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 125,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731392024,
+          "createAt": 1778730923718
+        }
+      },
+      "bhFkcOOORm0M1zQ0mxjrg": {
+        "id": "bhFkcOOORm0M1zQ0mxjrg",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "videoUrl",
+        "comment": "URL video giới thiệu",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 109,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731419877,
+          "createAt": 1778731213909
+        }
+      },
+      "JR6sxwiyxassFD0i7YgEz": {
+        "id": "JR6sxwiyxassFD0i7YgEz",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "content",
+        "comment": "Mô tả ngắn / nội dung giới thiệu",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 176,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731694607,
+          "createAt": 1778731214075
+        }
+      },
+      "4NrqjEUAMlbo4Mv2Vw99Y": {
+        "id": "4NrqjEUAMlbo4Mv2Vw99Y",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "lessonIds",
+        "comment": "Mảng ID lessons",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 89,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731690087,
+          "createAt": 1778731214241
+        }
+      },
+      "4k43UqqTeK2yRAWkQIezX": {
+        "id": "4k43UqqTeK2yRAWkQIezX",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "averageRating",
+        "comment": "Đánh giá trung bình (0-5)",
+        "dataType": "DECIMAL(5, 1)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 78,
+          "widthComment": 137,
+          "widthDataType": 77,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731682413,
+          "createAt": 1778731214401
+        }
+      },
+      "DtGbIT_F1K36zphnDIqIF": {
+        "id": "DtGbIT_F1K36zphnDIqIF",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "reviewCount",
+        "comment": "Tổng số review đã được duyệt",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 68,
+          "widthComment": 162,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731659805,
+          "createAt": 1778731214556
+        }
+      },
+      "4wrPzawFC9hV0IouiwdZw": {
+        "id": "4wrPzawFC9hV0IouiwdZw",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "enrolledCount",
+        "comment": "Số học viên đã đăng ký",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 78,
+          "widthComment": 125,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731651179,
+          "createAt": 1778731229835
+        }
+      },
+      "6OoVr6p7zan9jgwFg0SPS": {
+        "id": "6OoVr6p7zan9jgwFg0SPS",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "certificateRewardable",
+        "comment": "Có cấp chứng chỉ khi hoàn thành?",
+        "dataType": "BOOLEAN",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 115,
+          "widthComment": 182,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731644863,
+          "createAt": 1778731229988
+        }
+      },
+      "w0D5OvckrCAj9IpFqaSLw": {
+        "id": "w0D5OvckrCAj9IpFqaSLw",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "prerequisites",
+        "comment": "IDs khóa học cần hoàn thành trước",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 70,
+          "widthComment": 187,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731639745,
+          "createAt": 1778731230131
+        }
+      },
+      "quULEtgwkOXSu0VKzFwx3": {
+        "id": "quULEtgwkOXSu0VKzFwx3",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "tags",
+        "comment": "Từ khoá tìm kiếm",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 94,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731634086,
+          "createAt": 1778731230295
+        }
+      },
+      "d1GyH49x90MVTQEolgVx2": {
+        "id": "d1GyH49x90MVTQEolgVx2",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "status",
+        "comment": "'active' | 'inactive' | 'archived'",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 153,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732179710,
+          "createAt": 1778731230454
+        }
+      },
+      "4vu49kRUYh40vffPJel4D": {
+        "id": "4vu49kRUYh40vffPJel4D",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "createdAt",
+        "comment": "Ngày tạo",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731629189,
+          "createAt": 1778731245577
+        }
+      },
+      "7KGDtcSP_7_JgBVec4LKa": {
+        "id": "7KGDtcSP_7_JgBVec4LKa",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "updatedAt",
+        "comment": "Ngày cập nhật",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 79,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778731625449,
+          "createAt": 1778731245744
+        }
+      },
+      "AKKv5gZkW1xsSFnin0M1Q": {
+        "id": "AKKv5gZkW1xsSFnin0M1Q",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "createdBy",
+        "comment": "Wallet admin tạo khoá học",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 144,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733344029,
+          "createAt": 1778731245906
+        }
+      },
+      "t69a94PnbAACjPAxZKkIV": {
+        "id": "t69a94PnbAACjPAxZKkIV",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "lessonId",
+        "comment": "ID duy nhất",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 64,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733397163,
+          "createAt": 1778731749490
+        }
+      },
+      "RWR75K0EV0-_YyZHmUVAd": {
+        "id": "RWR75K0EV0-_YyZHmUVAd",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "courseId",
+        "comment": "Tham chiếu tới courses collection",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 178,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732087818,
+          "createAt": 1778731749703
+        }
+      },
+      "E0wN3E-muhLwTuAAbK8GD": {
+        "id": "E0wN3E-muhLwTuAAbK8GD",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "blockchainCourseId",
+        "comment": "ID trên Smart Contract",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 106,
+          "widthComment": 121,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732095889,
+          "createAt": 1778731749855
+        }
+      },
+      "hgCVnfM-ndGsBymeEA-v9": {
+        "id": "hgCVnfM-ndGsBymeEA-v9",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "title",
+        "comment": "Tên bài giảng",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 73,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732101070,
+          "createAt": 1778731750039
+        }
+      },
+      "cmr0T_h0mTHQoCz4bisgd": {
+        "id": "cmr0T_h0mTHQoCz4bisgd",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "description",
+        "comment": "Mô tả ngắn",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 61,
+          "widthComment": 63,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732102844,
+          "createAt": 1778731750194
+        }
+      },
+      "J-RdHsgAY4l9ZYbrHFReq": {
+        "id": "J-RdHsgAY4l9ZYbrHFReq",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "order",
+        "comment": "Thứ tự bài trong khóa học (1, 2, 3...)",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 190,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732113176,
+          "createAt": 1778731750342
+        }
+      },
+      "Ivoe4eRPoO4F1exlPb4hu": {
+        "id": "Ivoe4eRPoO4F1exlPb4hu",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "duration",
+        "comment": "Thời lượng (phút)",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 95,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732119414,
+          "createAt": 1778731750494
+        }
+      },
+      "SWsUv6KDxMm_vhLJXidag": {
+        "id": "SWsUv6KDxMm_vhLJXidag",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "videoUrl",
+        "comment": "URL video",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732123073,
+          "createAt": 1778731750658
+        }
+      },
+      "S699MHPKGzcpoBETMgBBE": {
+        "id": "S699MHPKGzcpoBETMgBBE",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "videoProvider",
+        "comment": "'youtube' | 'vimeo' | 'pinata' | 'other'",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 75,
+          "widthComment": 190,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732198854,
+          "createAt": 1778731750821
+        }
+      },
+      "jsGIZHJVjHaZnj7ro-kPS": {
+        "id": "jsGIZHJVjHaZnj7ro-kPS",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "thumbnailCid",
+        "comment": "CID Pinata ảnh thumbnail",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 73,
+          "widthComment": 137,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732203314,
+          "createAt": 1778731750995
+        }
+      },
+      "E61wE1yK0TnruPop_YNkI": {
+        "id": "E61wE1yK0TnruPop_YNkI",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "content",
+        "comment": "Nội dung bài học",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 94,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732205198,
+          "createAt": 1778731751216
+        }
+      },
+      "6X3-qBWApM0toeVCL2xnR": {
+        "id": "6X3-qBWApM0toeVCL2xnR",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "transcript",
+        "comment": "Phiên âm / subtitle video",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 134,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732206279,
+          "createAt": 1778731783071
+        }
+      },
+      "0Fnp0LVrC7CQ07aYHo4iV": {
+        "id": "0Fnp0LVrC7CQ07aYHo4iV",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "attachments",
+        "comment": "Tài liệu đính kèm",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 91,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732211606,
+          "createAt": 1778731783418
+        }
+      },
+      "hbScJMHLebFy06xVw8k0K": {
+        "id": "hbScJMHLebFy06xVw8k0K",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "quiz",
+        "comment": "Quiz cuối bài (tuỳ chọn)",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 128,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732290737,
+          "createAt": 1778731783917
+        }
+      },
+      "apkQFNW07Vd4TFHRmnr-r": {
+        "id": "apkQFNW07Vd4TFHRmnr-r",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "status",
+        "comment": "'draft' | 'published' | 'archived'",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 159,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732305828,
+          "createAt": 1778731784455
+        }
+      },
+      "B67BkKwOg7R-4jsACjCxx": {
+        "id": "B67BkKwOg7R-4jsACjCxx",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "isLocked",
+        "comment": "Khoá bài nếu chưa hoàn thành bài trước",
+        "dataType": "BOOLEAN",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 215,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732313007,
+          "createAt": 1778731784983
+        }
+      },
+      "aWwUa2SPr0fycABGqJL-5": {
+        "id": "aWwUa2SPr0fycABGqJL-5",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "prerequisiteLesson",
+        "comment": "lessonId cần hoàn thành trước",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 101,
+          "widthComment": 162,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732316843,
+          "createAt": 1778731785778
+        }
+      },
+      "wbqCHr7RTCSoNeV58L_T2": {
+        "id": "wbqCHr7RTCSoNeV58L_T2",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "views",
+        "comment": "Lượt xem",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732323067,
+          "createAt": 1778731786413
+        }
+      },
+      "QSaIH61tSU-wREDzNa3y9": {
+        "id": "QSaIH61tSU-wREDzNa3y9",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "likes",
+        "comment": "Lượt thích",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732326335,
+          "createAt": 1778731787032
+        }
+      },
+      "yIokRBn6WTtt34M0zb2q8": {
+        "id": "yIokRBn6WTtt34M0zb2q8",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "createdAt",
+        "comment": "Ngày tạo",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732330688,
+          "createAt": 1778731788045
+        }
+      },
+      "Y4byzzyHFvudp9J1VfsjW": {
+        "id": "Y4byzzyHFvudp9J1VfsjW",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "updatedAt",
+        "comment": "Ngày cập nhật",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 79,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732335093,
+          "createAt": 1778731788623
+        }
+      },
+      "cAQGQLhnVRgOkbfHKzliE": {
+        "id": "cAQGQLhnVRgOkbfHKzliE",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "createdBy",
+        "comment": "Wallet admin tạo khoá học",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 144,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732337350,
+          "createAt": 1778731788987
+        }
+      },
+      "nRXTKi3a1iLZiLdqhE8b6": {
+        "id": "nRXTKi3a1iLZiLdqhE8b6",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "enrollmentId",
+        "comment": "ID duy nhất",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 70,
+          "widthComment": 64,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733393337,
+          "createAt": 1778732380725
+        }
+      },
+      "8OqiFNevQA1d_JMazFYeJ": {
+        "id": "8OqiFNevQA1d_JMazFYeJ",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "userWallet",
+        "comment": "Địa chỉ ví người mua",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 111,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732534287,
+          "createAt": 1778732381030
+        }
+      },
+      "QSYq6kFWvJQAw7fSMiXb4": {
+        "id": "QSYq6kFWvJQAw7fSMiXb4",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "courseId",
+        "comment": "ID khóa học trong Firestore",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 147,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732538784,
+          "createAt": 1778732381415
+        }
+      },
+      "bKgiPmiyR8Y8UtiScwSCb": {
+        "id": "bKgiPmiyR8Y8UtiScwSCb",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "transactionHash",
+        "comment": "Hash giao dịch blockchain",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 87,
+          "widthComment": 140,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732560749,
+          "createAt": 1778732382627
+        }
+      },
+      "Wb0fSKpKlxtg8qFa5cqcg": {
+        "id": "Wb0fSKpKlxtg8qFa5cqcg",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "purchasePrice",
+        "comment": "Giá khi mua",
+        "dataType": "DECIMAL(20, 18)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 75,
+          "widthComment": 65,
+          "widthDataType": 90,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732567337,
+          "createAt": 1778732383037
+        }
+      },
+      "iFzI_TituvYCKDia2aJV5": {
+        "id": "iFzI_TituvYCKDia2aJV5",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "purchasedAt",
+        "comment": "Thời điểm mua",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 69,
+          "widthComment": 82,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732573398,
+          "createAt": 1778732384516
+        }
+      },
+      "hMfa2VwOfYD19bPNmm7Zx": {
+        "id": "hMfa2VwOfYD19bPNmm7Zx",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "status",
+        "comment": "'success' | 'pending' | 'failed'",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 150,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732578100,
+          "createAt": 1778732385053
+        }
+      },
+      "TQCkRyRXNK10uET74rFrI": {
+        "id": "TQCkRyRXNK10uET74rFrI",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "progress",
+        "comment": "Tiến độ học",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 64,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732584819,
+          "createAt": 1778732385912
+        }
+      },
+      "VF-5CrPDp9Z5kdfVOAtGv": {
+        "id": "VF-5CrPDp9Z5kdfVOAtGv",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "startedAt",
+        "comment": "Lần đầu vào học",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 89,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732588698,
+          "createAt": 1778732386319
+        }
+      },
+      "_RvN6zrSrot2eFq-ikQjH": {
+        "id": "_RvN6zrSrot2eFq-ikQjH",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "completedAt",
+        "comment": "Thời điểm hoàn thành",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 70,
+          "widthComment": 119,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732600318,
+          "createAt": 1778732387266
+        }
+      },
+      "FZl8KGHdB_n8BMBJ68RLt": {
+        "id": "FZl8KGHdB_n8BMBJ68RLt",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "certificateIssued",
+        "comment": "Đã cấp chứng chỉ?",
+        "dataType": "BOOLEAN",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 87,
+          "widthComment": 99,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732609061,
+          "createAt": 1778732387680
+        }
+      },
+      "MoA8yVdRSYfsiy2r2-bRD": {
+        "id": "MoA8yVdRSYfsiy2r2-bRD",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "certificateHash",
+        "comment": "Hash chứng chỉ on-chain",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 80,
+          "widthComment": 134,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732614993,
+          "createAt": 1778732388379
+        }
+      },
+      "shSsMyHF8MrKTy1qRiOLO": {
+        "id": "shSsMyHF8MrKTy1qRiOLO",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "rating",
+        "comment": "Sao đánh giá nhanh",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 107,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732623324,
+          "createAt": 1778732388783
+        }
+      },
+      "Yfxouv1-88zEslqDrw7uH": {
+        "id": "Yfxouv1-88zEslqDrw7uH",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "review",
+        "comment": "Bình luận ngắn",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 81,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732627751,
+          "createAt": 1778732389164
+        }
+      },
+      "jycmx8WR-8deR5HDRhD4C": {
+        "id": "jycmx8WR-8deR5HDRhD4C",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "reviewId",
+        "comment": "ID duy nhất",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 64,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733401394,
+          "createAt": 1778732687748
+        }
+      },
+      "7O8G92A3DzQxi1HUmm6bt": {
+        "id": "7O8G92A3DzQxi1HUmm6bt",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "courseId",
+        "comment": "Tham chiếu tới courses collection",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 178,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732887496,
+          "createAt": 1778732688146
+        }
+      },
+      "070C4OsrtUKxV_12HgMVL": {
+        "id": "070C4OsrtUKxV_12HgMVL",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "userWallet",
+        "comment": "Địa chỉ ví người viết review",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 144,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732893088,
+          "createAt": 1778732688679
+        }
+      },
+      "kL0pU3wWnKfKuO0VKpe0B": {
+        "id": "kL0pU3wWnKfKuO0VKpe0B",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "enrollmentId",
+        "comment": "Tham chiếu enrollment",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 70,
+          "widthComment": 124,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732898490,
+          "createAt": 1778732689029
+        }
+      },
+      "HrHf1kvHLLf8S-vb59f83": {
+        "id": "HrHf1kvHLLf8S-vb59f83",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "rating",
+        "comment": "Số sao (1-5)",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732902864,
+          "createAt": 1778732689635
+        }
+      },
+      "nNn4sI17EthmF8dUWsGZn": {
+        "id": "nNn4sI17EthmF8dUWsGZn",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "title",
+        "comment": "Tiêu đề review",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 78,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732913252,
+          "createAt": 1778732690309
+        }
+      },
+      "xDrWCLo7Bb9Iwf7cT1YnS": {
+        "id": "xDrWCLo7Bb9Iwf7cT1YnS",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "content",
+        "comment": "Nội dung review",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 89,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732925229,
+          "createAt": 1778732690984
+        }
+      },
+      "w-Kin--YXGsxfCvJLZ383": {
+        "id": "w-Kin--YXGsxfCvJLZ383",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "verified",
+        "comment": "Đã xác minh mua hàng",
+        "dataType": "BOOLEAN",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 124,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732936171,
+          "createAt": 1778732691751
+        }
+      },
+      "-WbuDPHH32gaa_B5qELQM": {
+        "id": "-WbuDPHH32gaa_B5qELQM",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "helpful",
+        "comment": "Số vote \"hữu ích\"",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 94,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732939387,
+          "createAt": 1778732692294
+        }
+      },
+      "gkkwSC4OYSaXGrngUn4dh": {
+        "id": "gkkwSC4OYSaXGrngUn4dh",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "unhelpful",
+        "comment": "Số vote \"không hữu ích\"",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 131,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732950475,
+          "createAt": 1778732692804
+        }
+      },
+      "Ng54S8hcv4Tf723IqyHVM": {
+        "id": "Ng54S8hcv4Tf723IqyHVM",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "replies",
+        "comment": "Phản hồi từ instructor/admin",
+        "dataType": "JSON",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 155,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732954563,
+          "createAt": 1778732693433
+        }
+      },
+      "kwj7Wy8x9QE-JDCK-CCZW": {
+        "id": "kwj7Wy8x9QE-JDCK-CCZW",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "status",
+        "comment": "'pending' | 'approved' | 'rejected' | 'flagged'",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 230,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732962766,
+          "createAt": 1778732693964
+        }
+      },
+      "GeMonKUdkAq3BlmgQxtJt": {
+        "id": "GeMonKUdkAq3BlmgQxtJt",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "flagged",
+        "comment": "Đã bị gắn cờ spam/nội dung không phù hợp?",
+        "dataType": "BOOLEAN",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 244,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732969411,
+          "createAt": 1778732694550
+        }
+      },
+      "Z7Q8VabW-AiUQqpEHaAX2": {
+        "id": "Z7Q8VabW-AiUQqpEHaAX2",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "flagReason",
+        "comment": "Lý do: 'spam' | 'inappropriate' | 'misleading' | 'offensive'",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 292,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732974511,
+          "createAt": 1778732695100
+        }
+      },
+      "ZAuMzjYWqgP0Ppw8do1HE": {
+        "id": "ZAuMzjYWqgP0Ppw8do1HE",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "createdAt",
+        "comment": "Ngày tạo",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732980804,
+          "createAt": 1778732695682
+        }
+      },
+      "TWLazAa-cxuXMQZWOWz6B": {
+        "id": "TWLazAa-cxuXMQZWOWz6B",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "updatedAt",
+        "comment": "Ngày cập nhật",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 79,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732987390,
+          "createAt": 1778732696231
+        }
+      },
+      "h7Fne5mU3FaBB_xCptV5M": {
+        "id": "h7Fne5mU3FaBB_xCptV5M",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "approvedAt",
+        "comment": "Ngày được phê duyệt",
+        "dataType": "TIMESTAMP",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 64,
+          "widthComment": 117,
+          "widthDataType": 65,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778732995263,
+          "createAt": 1778732696829
+        }
+      },
+      "-So2VHCp1limFpbH1pHnq": {
+        "id": "-So2VHCp1limFpbH1pHnq",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "approvedBy",
+        "comment": "Wallet admon/instructor đã duyệt",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 181,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733012431,
+          "createAt": 1778732697205
+        }
+      },
+      "b4k0aR-59GcKCnEkZjvlU": {
+        "id": "b4k0aR-59GcKCnEkZjvlU",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "createdBy",
+        "comment": "Wallet admin tạo khoá học",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 144,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733346663,
+          "createAt": 1778733327630
+        }
+      },
+      "xweVAUuSZpPMsIutbI_C8": {
+        "id": "xweVAUuSZpPMsIutbI_C8",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "userWallet",
+        "comment": "Địa chỉ ví người mua",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 111,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733417038,
+          "createAt": 1778733381971
+        }
+      },
+      "Yp6LhpUxu5OPscGgYnINR": {
+        "id": "Yp6LhpUxu5OPscGgYnINR",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "userWallet",
+        "comment": "Địa chỉ ví người viết review",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 144,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733518997,
+          "createAt": 1778733453937
+        }
+      },
+      "4N9pFBeyv6YoZYM1D-hKl": {
+        "id": "4N9pFBeyv6YoZYM1D-hKl",
+        "tableId": "krz5FR7rlwlnQU6sWuEVC",
+        "name": "courseId",
+        "comment": "Tham chiếu tới courses collection",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 178,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733721410,
+          "createAt": 1778733612375
+        }
+      },
+      "RXTpu_LmLNqxlIoxz2fWh": {
+        "id": "RXTpu_LmLNqxlIoxz2fWh",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "courseId",
+        "comment": "ID khóa học trong Firestore",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 147,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733760050,
+          "createAt": 1778733753093
+        }
+      },
+      "Fa74flaSqZjqsKPIEItW6": {
+        "id": "Fa74flaSqZjqsKPIEItW6",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "courseId",
+        "comment": "Tham chiếu tới courses collection",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 178,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733783779,
+          "createAt": 1778733777351
+        }
+      },
+      "pWoFuaJcEfmwoYgJivQDT": {
+        "id": "pWoFuaJcEfmwoYgJivQDT",
+        "tableId": "b2ljB2m5P03p4OFfuoEnl",
+        "name": "enrollmentId",
+        "comment": "Tham chiếu enrollment",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 70,
+          "widthComment": 124,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778733929677,
+          "createAt": 1778733921850
+        }
+      }
+    },
+    "relationshipEntities": {
+      "fmMCCo8glp4tfAGigakpd": {
+        "id": "fmMCCo8glp4tfAGigakpd",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "i--eOXZGpqUYvpjymF0KJ",
+          "columnIds": [
+            "QJsDIK7Yk9IJoI0X6szMW"
+          ],
+          "x": 1320.1096,
+          "y": 957.3744333333333,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+          "columnIds": [
+            "b4k0aR-59GcKCnEkZjvlU"
+          ],
+          "x": 487.1509,
+          "y": 464.0138,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1778733327630,
+          "createAt": 1778733327630
+        }
+      },
+      "yaE1uw64lZZC8lU7G7EH9": {
+        "id": "yaE1uw64lZZC8lU7G7EH9",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "i--eOXZGpqUYvpjymF0KJ",
+          "columnIds": [
+            "QJsDIK7Yk9IJoI0X6szMW"
+          ],
+          "x": 1320.1096,
+          "y": 1096.0411,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "cZT2tSro1RLIf7KYmzm55",
+          "columnIds": [
+            "xweVAUuSZpPMsIutbI_C8"
+          ],
+          "x": 915.896,
+          "y": 910.0012,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1778733381971,
+          "createAt": 1778733381971
+        }
+      },
+      "qa_Yeulz8-jXzmOkk0P2l": {
+        "id": "qa_Yeulz8-jXzmOkk0P2l",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "i--eOXZGpqUYvpjymF0KJ",
+          "columnIds": [
+            "QJsDIK7Yk9IJoI0X6szMW"
+          ],
+          "x": 1320.1096,
+          "y": 1234.7077666666667,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "b2ljB2m5P03p4OFfuoEnl",
+          "columnIds": [
+            "Yp6LhpUxu5OPscGgYnINR"
+          ],
+          "x": 892.1152999999999,
+          "y": 1673.6986,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1778733453938,
+          "createAt": 1778733453938
+        }
+      },
+      "0Q76jxOmlZd8kX5LvWyFI": {
+        "id": "0Q76jxOmlZd8kX5LvWyFI",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+          "columnIds": [
+            "wBgmg_MjWcbWGz4pgXApE"
+          ],
+          "x": 487.1509,
+          "y": 160.0138,
+          "direction": 2
+        },
+        "end": {
+          "tableId": "krz5FR7rlwlnQU6sWuEVC",
+          "columnIds": [
+            "4N9pFBeyv6YoZYM1D-hKl"
+          ],
+          "x": 769.3145,
+          "y": 321.7315,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1778733612375,
+          "createAt": 1778733612375
+        }
+      },
+      "uQpnb3LLl3qZi9bcxdqlQ": {
+        "id": "uQpnb3LLl3qZi9bcxdqlQ",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+          "columnIds": [
+            "wBgmg_MjWcbWGz4pgXApE"
+          ],
+          "x": 127.90090000000001,
+          "y": 616.0138,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "cZT2tSro1RLIf7KYmzm55",
+          "columnIds": [
+            "RXTpu_LmLNqxlIoxz2fWh"
+          ],
+          "x": 514.896,
+          "y": 910.0012,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1778733753093,
+          "createAt": 1778733753093
+        }
+      },
+      "NdmE_jdh0qIkSVxAGAIhT": {
+        "id": "NdmE_jdh0qIkSVxAGAIhT",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+          "columnIds": [
+            "wBgmg_MjWcbWGz4pgXApE"
+          ],
+          "x": 367.4009,
+          "y": 616.0138,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "b2ljB2m5P03p4OFfuoEnl",
+          "columnIds": [
+            "Fa74flaSqZjqsKPIEItW6"
+          ],
+          "x": 516.3652999999999,
+          "y": 1429.6986,
+          "direction": 4
+        },
+        "meta": {
+          "updateAt": 1778733777351,
+          "createAt": 1778733777351
+        }
+      },
+      "b3Oe1hPCD5kDj44faSCpA": {
+        "id": "b3Oe1hPCD5kDj44faSCpA",
+        "identification": false,
+        "relationshipType": 8,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "cZT2tSro1RLIf7KYmzm55",
+          "columnIds": [
+            "nRXTKi3a1iLZiLdqhE8b6"
+          ],
+          "x": 715.396,
+          "y": 1106.0012000000002,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "b2ljB2m5P03p4OFfuoEnl",
+          "columnIds": [
+            "pWoFuaJcEfmwoYgJivQDT"
+          ],
+          "x": 766.8652999999999,
+          "y": 1429.6986,
+          "direction": 4
+        },
+        "meta": {
+          "updateAt": 1778733921850,
+          "createAt": 1778733921850
+        }
+      }
+    },
+    "indexEntities": {},
+    "indexColumnEntities": {},
+    "memoEntities": {}
+  }
+}
