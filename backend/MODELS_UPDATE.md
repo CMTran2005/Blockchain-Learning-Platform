@@ -1,203 +1,95 @@
-# Backend Update Summary — Lesson & Review Models
+# Models Update — Hybrid Architecture Migration
 
-## Những Thay Đổi Chính
+**Ngày cập nhật**: 2026-05-14
 
-### 2 Models Mới
+## Tổng quan thay đổi
 
-#### Lesson.js — Quản lý bài giảng
+Cập nhật toàn bộ data models theo kiến trúc **4-service hybrid**:
 
-```javascript
-lessonSchema {
-  lessonId, courseId, blockchainCourseId,
-  title, description, order, duration,
-  videoUrl, videoProvider, thumbnailCid,
-  content, transcript,
-  attachments[], quiz,
-  status (draft / published / archived),
-  isLocked, prerequisiteLesson,
-  views, likes,
-  createdAt, updatedAt, createdBy
-}
-```
-
-Tính năng:
-- Video quản lý linh hoạt (YouTube, Vimeo, Pinata IPFS)
-- Nội dung chi tiết: transcript, attachments
-- Quiz tích hợp cuối bài
-- Prerequisite: khoá bài cho đến khi hoàn thành bài trước
-- Theo dõi views và likes
-- Workflow: draft → published → archived
-
-#### Review.js — Đánh giá và bình luận
-
-```javascript
-reviewSchema {
-  reviewId, courseId, userWallet, enrollmentId,
-  rating (1-5), title, content,
-  verified, helpful, unhelpful,
-  replies[],
-  status (pending / approved / rejected / flagged),
-  flagged, flagReason,
-  createdAt, updatedAt, approvedAt, approvedBy
-}
-```
-
-Tính năng:
-- Hệ thống 5 sao
-- Badge xác minh mua hàng (verified purchase)
-- Helpful / Unhelpful votes
-- Instructor/Admin reply
-- Moderation workflow: pending → approved
-- Phát hiện spam (flagged)
-
----
-
-### Course Model — Cập Nhật
-
-Các trường mới thêm vào:
-- `blockchainCourseId` — ID trên blockchain để tham chiếu smart contract
-- `lessonIds[]` — Mảng ID liên kết tới lessons collection
-- `certificateRewardable` — Khoá học có cấp chứng chỉ không
-- `prerequisites[]` — Danh sách khóa học tiên quyết
-- `averageRating` — Tính tự động từ reviews
-
-Các trường đã chuyển sang model khác:
-- `lessons` (chi tiết) → đã tách ra thành collection `lessons` riêng, Course chỉ giữ `lessonIds`
-
-Lý do: giảm tải data trong courses collection, lessons có thể query riêng, performance tốt hơn khi số lượng lessons lớn.
-
----
-
-### 7 Lesson Controllers
-
-| Function | Method | Endpoint | Chức năng |
-|---|---|---|---|
-| `getLessonsByCourse` | GET | `/api/lessons/course/:courseId` | Lấy tất cả lessons của khóa học |
-| `getLessonById` | GET | `/api/lessons/:lessonId` | Lấy chi tiết bài giảng |
-| `createLesson` | POST | `/api/lessons` | Tạo bài giảng mới |
-| `updateLesson` | PUT | `/api/lessons/:lessonId` | Cập nhật bài giảng |
-| `deleteLesson` | DELETE | `/api/lessons/:lessonId` | Xóa bài giảng |
-| `likeLesson` | POST | `/api/lessons/:lessonId/like` | Thích bài giảng |
-| `publishLesson` | PATCH | `/api/lessons/:lessonId/publish` | Publish từ draft |
-
----
-
-### 10 Review Controllers
-
-| Function | Method | Endpoint | Chức năng |
-|---|---|---|---|
-| `getReviewsByCourse` | GET | `/api/reviews/course/:courseId` | Lấy reviews của khóa học |
-| `getCourseReviewStats` | GET | `/api/reviews/stats/:courseId` | Thống kê ratings |
-| `getReviewById` | GET | `/api/reviews/:reviewId` | Chi tiết review |
-| `createReview` | POST | `/api/reviews` | Tạo review mới |
-| `updateReview` | PUT | `/api/reviews/:reviewId` | Cập nhật review |
-| `deleteReview` | DELETE | `/api/reviews/:reviewId` | Xóa review |
-| `approveReview` | PATCH | `/api/reviews/:reviewId/approve` | Phê duyệt (Admin) |
-| `flagReview` | POST | `/api/reviews/:reviewId/flag` | Flag spam |
-| `markHelpful` | POST | `/api/reviews/:reviewId/helpful` | Mark helpful |
-| `replyToReview` | POST | `/api/reviews/:reviewId/reply` | Trả lời review |
-
----
-
-## Tổng Số API Endpoints
-
-| Nhóm | Số endpoint |
+| Service | Vai trò |
 |---|---|
-| Courses | 6 |
-| Users | 5 |
-| Enrollments | 5 |
-| Lessons | 7 |
-| Reviews | 10 |
-| Upload | 3 |
-| **Tổng** | **36** |
+| Firebase Firestore | Database chính — metadata, links, records |
+| Cloudinary | Media storage — video, ảnh, PDF |
+| Pinata IPFS | Immutable proof — certificate JSON, course snapshot |
+| Smart Contract | On-chain truth — enrollment, progress, certificate |
 
 ---
 
-## Database Relationships
+## Chi tiết thay đổi từng model
 
-```
-courses (1) ──── (Many) lessons
-    |
-    |──── enrollments ──── users
-    |
-    └──── reviews ──────── users
-```
+### Course.js
+| Field cũ | Field mới | Lý do |
+|---|---|---|
+| `imageCid` (Pinata) | `imageUrl` (Cloudinary URL) | Ảnh → Cloudinary |
+| `videoUrl` (generic) | Giữ nguyên | URL Cloudinary hoặc YouTube |
+| `content` | **Xoá** | Không cần, đã có `description` |
+| `prerequisites` | **Xoá** | Không cần cho MVP |
+| `metadataCid` | `metadataCid` | CID Pinata của course snapshot JSON |
 
-**5 Collections:**
-- courses
-- users
-- enrollments
-- lessons
-- reviews
+### Lesson.js
+| Field cũ | Field mới | Lý do |
+|---|---|---|
+| `thumbnailCid` (Pinata) | `thumbnailUrl` (Cloudinary URL) | Ảnh → Cloudinary |
+| `videoProvider` | Cập nhật values | `'cloudinary'\|'youtube'\|'vimeo'` |
+| `likes` | **Xoá** | Không cần cho MVP |
+| `transcript` | Giữ nguyên | Text nhỏ, OK trong Firebase |
 
----
+### User.js
+| Field cũ | Field mới | Lý do |
+|---|---|---|
+| `avatar` (CID) | `avatarUrl` (Cloudinary URL) | Ảnh → Cloudinary |
+| `bookmarkedCourses` | **Xoá** | Không cần cho MVP |
+| `reputation` | **Xoá** | Không cần cho MVP |
+| `purchasedCourses` | **Xoá** | Dùng enrollments collection thay |
 
-## Validation
+### Enrollment.js
+| Field cũ | Field mới | Lý do |
+|---|---|---|
+| `certificateHash` | `certificateCid` | CID Pinata (thay vì hash on-chain) |
+| `rating`, `review` | **Xoá** | Chuyển hẳn về Review collection |
+| `startedAt` | **Xoá** | Dùng `purchasedAt` thay |
+| `blockchainCourseId` | `blockchainCourseId` | Cần để gọi contract |
+| `certificateTxHash` | `certificateTxHash` | Hash giao dịch issueCertificate |
 
-**Lesson:**
-- `courseId` bắt buộc
-- `title` bắt buộc, không được để trống
-- `order` phải là số dương (1, 2, 3...)
-- `duration` không âm (phút)
-- `videoProvider` phải là: `youtube`, `vimeo`, `pinata`, `other`
-- `status` phải là: `draft`, `published`, `archived`
-
-**Review:**
-- `courseId` bắt buộc
-- `userWallet` phải là địa chỉ Ethereum hợp lệ
-- `rating` từ 1 đến 5
-- `content` từ 10 đến 5000 ký tự
-- `status` phải là: `pending`, `approved`, `rejected`, `flagged`
-
----
-
-## Lesson Flow
-
-```
-1. Instructor tạo course
-2. Instructor tạo lessons (trạng thái draft)
-3. Publish lessons khi sẵn sàng
-4. Student xem lessons đã published
-5. Views và likes được cập nhật tự động
-```
-
-## Review Flow
-
-```
-1. Student mua khóa học
-2. Hoàn thành khóa học
-3. Gửi review (trạng thái pending)
-4. Instructor/Admin approve
-5. Review hiện trên trang khóa học
-6. Người dùng khác vote helpful/unhelpful
-```
+### Review.js
+| Field cũ | Field mới | Lý do |
+|---|---|---|
+| `blockchainCourseId` | **Xoá** | Lấy từ courses collection khi cần |
+| `unhelpful` | **Xoá** | Đơn giản hoá |
+| `content` max | 5000 → 2000 ký tự | Hợp lý hơn cho UX |
 
 ---
 
-## Frontend Integration
+## Files mới tạo
 
-**Lessons:**
-```javascript
-// Lấy danh sách bài giảng
-GET /api/lessons/course/{courseId}
+| File | Mô tả |
+|---|---|
+| `backend/src/config/cloudinary.js` | Config Cloudinary SDK |
+| `backend/src/config/contract.js` | Config smart contract + ABI |
+| `smart-contract/contracts/BlockchainLearning.sol` | Smart contract Solidity |
+| `smart-contract/scripts/deploy.js` | Deploy script (Hardhat) |
+| `smart-contract/hardhat.config.js` | Hardhat config (Ganache) |
+| `smart-contract/package.json` | Smart contract dependencies |
 
-// Xem bài giảng
-GET /api/lessons/{lessonId}
+## Files đã thay đổi lớn
 
-// Like bài giảng
-POST /api/lessons/{lessonId}/like
-```
+| File | Thay đổi |
+|---|---|
+| `uploadController.js` | Split: `/media` → Cloudinary, `/json` → Pinata |
+| `courseController.js` | `createCourse` upload Pinata snapshot + đăng ký on-chain |
+| `enrollController.js` | `progress=100` tự động cấp certificate qua Pinata + contract |
+| `uploadRoutes.js` | Routes đổi tên: `/file` → `/media`, `/url/:cid` → `/ipfs/:cid` |
+| `enrollRoutes.js` | Xoá route `submitReview` (đã chuyển về reviewController) |
+| `server.js` | Test connection cả 3 services khi khởi động |
 
-**Reviews:**
-```javascript
-// Xem reviews
-GET /api/reviews/course/{courseId}
-GET /api/reviews/stats/{courseId}
+---
 
-// Gửi review
-POST /api/reviews
-// Body: { courseId, userWallet, rating, content, enrollmentId }
+## Breaking Changes
 
-// Vote helpful
-POST /api/reviews/{reviewId}/helpful
-```
+> Frontend cần cập nhật:
+> - Upload endpoint: `POST /api/upload/file` → `POST /api/upload/media`
+> - CID URL endpoint: `GET /api/upload/url/:cid` → `GET /api/upload/ipfs/:cid`
+> - Course field: `imageCid` → `imageUrl` (Cloudinary URL thay vì CID)
+> - Lesson field: `thumbnailCid` → `thumbnailUrl`
+> - User field: `avatar` → `avatarUrl`
+> - Enrollment: không còn `submitReview` trong enroll routes

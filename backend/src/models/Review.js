@@ -2,37 +2,36 @@
  * Review Model
  * Cấu trúc dữ liệu cho một đánh giá khóa học.
  *
- * Lưu ý thiết kế:
- *  - `verified` = true nếu user có enrollmentId hợp lệ (đã mua thực sự).
- *  - `status` mặc định là 'pending' — admin/instructor phải approve trước khi hiển thị.
- *  - `blockchainCourseId` đã bị loại bỏ — không cần thiết vì có thể lấy từ
- *    courses collection qua courseId khi cần.
- *  - `replies` — array các phản hồi từ instructor/admin:
- *      [{ replyId, repliedBy, role, content, createdAt }]
+ * Kiến trúc lưu trữ:
+ *  - Firebase: lưu toàn bộ review data
+ *  - Smart Contract: verified = true nếu contract.isEnrolled() trả về true
+ *
+ *  `verified` được set dựa trên việc kiểm tra enrollment on-chain.
+ *  `status` mặc định 'pending' — admin phải approve trước khi hiển thị.
  */
 const reviewSchema = {
-  reviewId: String,               // ID duy nhất (tạo trong controller)
+  reviewId: String,               // ID duy nhất (vd: review_<courseId>_<wallet[0:8]>_<ts>)
   courseId: String,               // Tham chiếu tới courses collection
   userWallet: String,             // Địa chỉ ví người viết review (lowercase)
-  enrollmentId: String,           // Tham chiếu enrollment (dùng để xác minh đã mua)
-  rating: Number,                 // Số sao (1-5)
+  enrollmentId: String,           // Tham chiếu enrollment (để xác minh đã mua)
+  rating: Number,                 // Số sao (1–5)
   title: String,                  // Tiêu đề review (tuỳ chọn)
-  content: String,                // Nội dung review (10-5000 ký tự)
-  verified: Boolean,              // Đã xác minh mua hàng (= !!enrollmentId)
+  content: String,                // Nội dung review (10–2000 ký tự)
+  verified: Boolean,              // Đã xác minh mua hàng on-chain?
   helpful: Number,                // Số vote "hữu ích"
-  unhelpful: Number,              // Số vote "không hữu ích"
-  replies: Array,                 // Phản hồi từ instructor/admin
   status: String,                 // 'pending' | 'approved' | 'rejected' | 'flagged'
-  flagged: Boolean,               // Đã bị gắn cờ spam/nội dung không phù hợp?
-  flagReason: String,             // Lý do: 'spam' | 'inappropriate' | 'misleading' | 'offensive'
+  flagged: Boolean,               // Đã bị gắn cờ spam?
+  flagReason: String,             // Lý do gắn cờ (nullable)
+  replies: Array,                 // Phản hồi từ instructor/admin
+  // [{ replyId, repliedBy, role, content, createdAt }]
   createdAt: Date,                // Ngày tạo
   updatedAt: Date,                // Ngày cập nhật
   approvedAt: Date,               // Ngày được phê duyệt (nullable)
-  approvedBy: String,             // Wallet admin/instructor đã duyệt (nullable)
+  approvedBy: String,             // Wallet admin đã duyệt (nullable)
 };
 
 /**
- * Validate dữ liệu Review trước khi ghi vào Firestore.
+ * Validate dữ liệu Review trước khi ghi vào Firebase.
  * @param {object} data
  * @returns {string[]} Danh sách lỗi (rỗng = hợp lệ)
  */
@@ -57,8 +56,8 @@ const validateReview = (data) => {
     errors.push('Review content must be at least 10 characters');
   }
 
-  if (data.content && data.content.length > 5000) {
-    errors.push('Review content must not exceed 5000 characters');
+  if (data.content && data.content.length > 2000) {
+    errors.push('Review content must not exceed 2000 characters');
   }
 
   if (data.status && !['pending', 'approved', 'rejected', 'flagged'].includes(data.status)) {

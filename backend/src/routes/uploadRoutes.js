@@ -1,28 +1,30 @@
 /**
  * Upload Routes
- * /api/upload — Upload file / JSON lên Pinata IPFS
+ * /api/upload — Phân luồng upload theo service:
+ *   POST /api/upload/media    → Cloudinary (video, ảnh, PDF...)
+ *   POST /api/upload/json     → Pinata IPFS (metadata JSON)
+ *   GET  /api/upload/ipfs/:cid → Lấy URL từ CID Pinata
  */
 
 const express = require('express');
-const multer = require('multer');
-const router = express.Router();
+const multer  = require('multer');
+const router  = express.Router();
 
-const { uploadFile, uploadJSON, getCidUrl } = require('../controllers/uploadController');
+const { uploadMedia, uploadJSON, getCidUrl } = require('../controllers/uploadController');
 
-// Multer: lưu vào memory (không ghi ra disk), để pass Buffer cho Pinata
-const storage = multer.memoryStorage();
+// Multer: lưu vào memory (pass Buffer trực tiếp cho Cloudinary / Pinata)
 const upload = multer({
-  storage,
-  limits: { fileSize: 100 * 1024 * 1024 }, // 100MB
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 500 * 1024 * 1024 }, // 500MB (cho video)
 });
 
-// POST /api/upload/file — upload một file
-router.post('/file', upload.single('file'), uploadFile);
+// POST /api/upload/media — upload file media lên Cloudinary
+router.post('/media', upload.single('file'), uploadMedia);
 
-// POST /api/upload/json — upload JSON metadata
+// POST /api/upload/json  — upload JSON metadata lên Pinata IPFS
 router.post('/json', uploadJSON);
 
-// GET /api/upload/url/:cid — lấy URL từ CID
-router.get('/url/:cid', getCidUrl);
+// GET /api/upload/ipfs/:cid — chuyển CID thành URL Pinata Gateway
+router.get('/ipfs/:cid', getCidUrl);
 
 module.exports = router;

@@ -2,44 +2,39 @@
  * Lesson Model
  * Cấu trúc dữ liệu cho một bài giảng trong khóa học.
  *
- * Lưu ý thiết kế:
- *  - `videoUrl` có thể là:
- *      - URL YouTube/Vimeo (videoProvider: 'youtube' | 'vimeo')
- *      - IPFS gateway URL từ Pinata (videoProvider: 'pinata')
- *  - `thumbnailCid` lưu CID Pinata nếu thumbnail upload lên IPFS.
- *  - `attachments` gộp cả resources (link) và file đính kèm (CID Pinata):
- *      [{ name, url, type }]  — url có thể là HTTP hoặc IPFS gateway
- *  - `isLocked` — bài bị khoá cho đến khi user hoàn thành `prerequisiteLesson`.
+ * Kiến trúc lưu trữ:
+ *  - Firebase: lưu toàn bộ metadata lesson, videoUrl (Cloudinary), thumbnailUrl (Cloudinary)
+ *  - Cloudinary: lưu video bài giảng (videoUrl) và ảnh thumbnail (thumbnailUrl)
+ *    Ngoại lệ: nếu videoProvider = 'youtube' | 'vimeo', videoUrl là embed link bên ngoài.
+ *  - attachments: mảng { name, url, type } — url là Cloudinary URL hoặc link ngoài
  */
 const lessonSchema = {
-  lessonId: String,               // ID duy nhất (tạo trong controller)
+  lessonId: String,               // ID duy nhất (vd: lesson_<courseId>_<timestamp>)
   courseId: String,               // Tham chiếu tới courses collection
   blockchainCourseId: Number,     // ID trên Smart Contract (để verify quyền xem)
   title: String,                  // Tên bài giảng
   description: String,            // Mô tả ngắn
   order: Number,                  // Thứ tự bài trong khóa học (1, 2, 3...)
   duration: Number,               // Thời lượng (phút)
-  videoUrl: String,               // URL video (YouTube, Vimeo hoặc IPFS gateway)
-  videoProvider: String,          // 'youtube' | 'vimeo' | 'pinata' | 'other'
-  thumbnailCid: String,           // CID Pinata ảnh thumbnail (dùng getIpfsUrl())
+  videoUrl: String,               // URL video từ Cloudinary hoặc YouTube/Vimeo embed
+  videoProvider: String,          // 'cloudinary' | 'youtube' | 'vimeo'
+  thumbnailUrl: String,           // URL ảnh thumbnail từ Cloudinary
   content: String,                // Nội dung bài học (HTML / Markdown)
-  transcript: String,             // Phiên âm / subtitle video
-  attachments: Array,             // Tài liệu đính kèm (PDF, ZIP, link...)
-  // Ví dụ: [{ name: "Slides.pdf", url: "https://...", type: "pdf" }]
+  attachments: Array,             // Tài liệu đính kèm từ Cloudinary
+  // Ví dụ: [{ name: "Slides.pdf", url: "https://res.cloudinary.com/...", type: "pdf" }]
   quiz: Object,                   // Quiz cuối bài (tuỳ chọn)
   // Ví dụ: { questions: [...], passingScore: 70 }
   status: String,                 // 'draft' | 'published' | 'archived'
   isLocked: Boolean,              // Khoá bài nếu chưa hoàn thành bài trước
   prerequisiteLesson: String,     // lessonId cần hoàn thành trước (nullable)
-  views: Number,                  // Lượt xem
-  likes: Number,                  // Lượt thích
+  views: Number,                  // Lượt xem (lưu Firebase, không on-chain)
   createdAt: Date,                // Ngày tạo
   updatedAt: Date,                // Ngày cập nhật
   createdBy: String,              // Wallet người tạo (instructor/admin)
 };
 
 /**
- * Validate dữ liệu Lesson trước khi ghi vào Firestore.
+ * Validate dữ liệu Lesson trước khi ghi vào Firebase.
  * @param {object} data
  * @returns {string[]} Danh sách lỗi (rỗng = hợp lệ)
  */
@@ -64,9 +59,9 @@ const validateLesson = (data) => {
 
   if (
     data.videoProvider &&
-    !['youtube', 'vimeo', 'pinata', 'other'].includes(data.videoProvider)
+    !['cloudinary', 'youtube', 'vimeo'].includes(data.videoProvider)
   ) {
-    errors.push('videoProvider must be: youtube, vimeo, pinata, or other');
+    errors.push('videoProvider must be: cloudinary, youtube, or vimeo');
   }
 
   if (data.status && !['draft', 'published', 'archived'].includes(data.status)) {

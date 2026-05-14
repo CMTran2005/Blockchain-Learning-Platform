@@ -4,9 +4,9 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -784.7952,
-    "scrollLeft": -101.7455,
-    "zoomLevel": 0.73,
+    "scrollTop": -1255.1667,
+    "scrollLeft": -243.6667,
+    "zoomLevel": 1,
     "show": 295,
     "database": 4,
     "databaseName": "",
@@ -64,9 +64,7 @@
           "TRjswotLvwlPl2v1GP_fj",
           "dSFsFljRXJ_qfxCMdEiTF",
           "HKzYrSwHbQSmmBGlUe1Fw",
-          "65sfpHwPX2NpXqW4l_Efq",
           "g4535LX_bhzajdzT5fzoV",
-          "Dz1H3HulrOx3KTPViSlgr",
           "fHgnm0swh66ETJVj-vLkM",
           "l6XT1O58kygGx82wqvQe3",
           "0R2YJC4-53ZZTSXcgaG40",
@@ -100,7 +98,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1778734026173,
+          "updateAt": 1778738914560,
           "createAt": 1778289153959
         }
       },
@@ -191,16 +189,14 @@
           "SEggi5BIPNd29pyLqole_",
           "VrEhdGvDis96XpaedvvzO",
           "zw-aARUtIIRvCKVCTMbFR",
-          "bhFkcOOORm0M1zQ0mxjrg",
-          "JR6sxwiyxassFD0i7YgEz",
           "4NrqjEUAMlbo4Mv2Vw99Y",
           "4k43UqqTeK2yRAWkQIezX",
           "DtGbIT_F1K36zphnDIqIF",
           "4wrPzawFC9hV0IouiwdZw",
           "6OoVr6p7zan9jgwFg0SPS",
-          "w0D5OvckrCAj9IpFqaSLw",
           "quULEtgwkOXSu0VKzFwx3",
           "d1GyH49x90MVTQEolgVx2",
+          "QUZFrS0_URLcv9wbFkx7f",
           "4vu49kRUYh40vffPJel4D",
           "7KGDtcSP_7_JgBVec4LKa"
         ],
@@ -226,6 +222,7 @@
           "w0D5OvckrCAj9IpFqaSLw",
           "quULEtgwkOXSu0VKzFwx3",
           "d1GyH49x90MVTQEolgVx2",
+          "QUZFrS0_URLcv9wbFkx7f",
           "4vu49kRUYh40vffPJel4D",
           "7KGDtcSP_7_JgBVec4LKa",
           "AKKv5gZkW1xsSFnin0M1Q"
@@ -239,7 +236,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1778733986890,
+          "updateAt": 1778738817003,
           "createAt": 1778729266313
         }
       },
@@ -259,14 +256,12 @@
           "S699MHPKGzcpoBETMgBBE",
           "jsGIZHJVjHaZnj7ro-kPS",
           "E61wE1yK0TnruPop_YNkI",
-          "6X3-qBWApM0toeVCL2xnR",
           "0Fnp0LVrC7CQ07aYHo4iV",
           "hbScJMHLebFy06xVw8k0K",
           "apkQFNW07Vd4TFHRmnr-r",
           "B67BkKwOg7R-4jsACjCxx",
           "aWwUa2SPr0fycABGqJL-5",
           "wbqCHr7RTCSoNeV58L_T2",
-          "QSaIH61tSU-wREDzNa3y9",
           "yIokRBn6WTtt34M0zb2q8",
           "Y4byzzyHFvudp9J1VfsjW",
           "cAQGQLhnVRgOkbfHKzliE"
@@ -305,7 +300,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1778734001200,
+          "updateAt": 1778739156458,
           "createAt": 1778731722443
         }
       },
@@ -317,17 +312,16 @@
           "nRXTKi3a1iLZiLdqhE8b6",
           "xweVAUuSZpPMsIutbI_C8",
           "RXTpu_LmLNqxlIoxz2fWh",
+          "SRAoLPxUQ-BTZxs38IoaV",
           "bKgiPmiyR8Y8UtiScwSCb",
           "Wb0fSKpKlxtg8qFa5cqcg",
           "iFzI_TituvYCKDia2aJV5",
           "hMfa2VwOfYD19bPNmm7Zx",
           "TQCkRyRXNK10uET74rFrI",
-          "VF-5CrPDp9Z5kdfVOAtGv",
           "_RvN6zrSrot2eFq-ikQjH",
           "FZl8KGHdB_n8BMBJ68RLt",
-          "MoA8yVdRSYfsiy2r2-bRD",
           "shSsMyHF8MrKTy1qRiOLO",
-          "Yfxouv1-88zEslqDrw7uH"
+          "MoA8yVdRSYfsiy2r2-bRD"
         ],
         "seqColumnIds": [
           "nRXTKi3a1iLZiLdqhE8b6",
@@ -335,6 +329,7 @@
           "8OqiFNevQA1d_JMazFYeJ",
           "RXTpu_LmLNqxlIoxz2fWh",
           "QSYq6kFWvJQAw7fSMiXb4",
+          "SRAoLPxUQ-BTZxs38IoaV",
           "bKgiPmiyR8Y8UtiScwSCb",
           "Wb0fSKpKlxtg8qFa5cqcg",
           "iFzI_TituvYCKDia2aJV5",
@@ -343,12 +338,12 @@
           "VF-5CrPDp9Z5kdfVOAtGv",
           "_RvN6zrSrot2eFq-ikQjH",
           "FZl8KGHdB_n8BMBJ68RLt",
-          "MoA8yVdRSYfsiy2r2-bRD",
           "shSsMyHF8MrKTy1qRiOLO",
+          "MoA8yVdRSYfsiy2r2-bRD",
           "Yfxouv1-88zEslqDrw7uH"
         ],
         "ui": {
-          "x": 514.896,
+          "x": 513.896,
           "y": 714.0012,
           "zIndex": 719,
           "widthName": 65,
@@ -356,7 +351,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1778734010079,
+          "updateAt": 1778739070130,
           "createAt": 1778732359042
         }
       },
@@ -374,11 +369,10 @@
           "xDrWCLo7Bb9Iwf7cT1YnS",
           "w-Kin--YXGsxfCvJLZ383",
           "-WbuDPHH32gaa_B5qELQM",
-          "gkkwSC4OYSaXGrngUn4dh",
-          "Ng54S8hcv4Tf723IqyHVM",
           "kwj7Wy8x9QE-JDCK-CCZW",
           "GeMonKUdkAq3BlmgQxtJt",
           "Z7Q8VabW-AiUQqpEHaAX2",
+          "Ng54S8hcv4Tf723IqyHVM",
           "ZAuMzjYWqgP0Ppw8do1HE",
           "TWLazAa-cxuXMQZWOWz6B",
           "h7Fne5mU3FaBB_xCptV5M",
@@ -398,10 +392,10 @@
           "w-Kin--YXGsxfCvJLZ383",
           "-WbuDPHH32gaa_B5qELQM",
           "gkkwSC4OYSaXGrngUn4dh",
-          "Ng54S8hcv4Tf723IqyHVM",
           "kwj7Wy8x9QE-JDCK-CCZW",
           "GeMonKUdkAq3BlmgQxtJt",
           "Z7Q8VabW-AiUQqpEHaAX2",
+          "Ng54S8hcv4Tf723IqyHVM",
           "ZAuMzjYWqgP0Ppw8do1HE",
           "TWLazAa-cxuXMQZWOWz6B",
           "h7Fne5mU3FaBB_xCptV5M",
@@ -416,7 +410,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1778734018913,
+          "updateAt": 1778739191790,
           "createAt": 1778732660423
         }
       }
@@ -505,20 +499,20 @@
       "TbhX-OmSdNcGes8hHeNSl": {
         "id": "TbhX-OmSdNcGes8hHeNSl",
         "tableId": "i--eOXZGpqUYvpjymF0KJ",
-        "name": "avatar",
-        "comment": "CID Pinata IPFS hoặc URL ảnh avatar",
+        "name": "avatarUrl",
+        "comment": "URL ảnh avatar từ Cloudinary",
         "dataType": "VARCHAR",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 194,
+          "widthComment": 156,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1778729080831,
+          "updateAt": 1778738866281,
           "createAt": 1778289481169
         }
       },
@@ -566,19 +560,19 @@
         "id": "dSFsFljRXJ_qfxCMdEiTF",
         "tableId": "i--eOXZGpqUYvpjymF0KJ",
         "name": "enrolledCourses",
-        "comment": "IDs khóa học đã đăng ký / đang học",
+        "comment": "Cache IDs khoá học đang học",
         "dataType": "JSON",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 87,
-          "widthComment": 193,
+          "widthComment": 159,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1778729119004,
+          "updateAt": 1778738880818,
           "createAt": 1778289481616
         }
       },
@@ -586,19 +580,19 @@
         "id": "HKzYrSwHbQSmmBGlUe1Fw",
         "tableId": "i--eOXZGpqUYvpjymF0KJ",
         "name": "completedCourses",
-        "comment": "IDs khóa học đã hoàn thành",
+        "comment": "Cache IDs khoá học đã hoàn thành",
         "dataType": "JSON",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 100,
-          "widthComment": 151,
+          "widthComment": 186,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1778729129979,
+          "updateAt": 1778738903820,
           "createAt": 1778289481772
         }
       },
@@ -1445,20 +1439,20 @@
       "zw-aARUtIIRvCKVCTMbFR": {
         "id": "zw-aARUtIIRvCKVCTMbFR",
         "tableId": "1B__LqNSjKqOCnMjKvc1Y",
-        "name": "imageCid",
-        "comment": "CID Pinata IPFS ảnh bìa",
+        "name": "imageUrl",
+        "comment": "URL ảnh bìa từ Cloudinary",
         "dataType": "VARCHAR",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 125,
+          "widthComment": 140,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1778731392024,
+          "updateAt": 1778738762460,
           "createAt": 1778730923718
         }
       },
@@ -1866,19 +1860,19 @@
         "id": "SWsUv6KDxMm_vhLJXidag",
         "tableId": "krz5FR7rlwlnQU6sWuEVC",
         "name": "videoUrl",
-        "comment": "URL video",
+        "comment": "URL video từ Cloudinary hoặc YouTube/Vimeo embed",
         "dataType": "VARCHAR",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 60,
+          "widthComment": 287,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1778732123073,
+          "updateAt": 1778739109616,
           "createAt": 1778731750658
         }
       },
@@ -1905,20 +1899,20 @@
       "jsGIZHJVjHaZnj7ro-kPS": {
         "id": "jsGIZHJVjHaZnj7ro-kPS",
         "tableId": "krz5FR7rlwlnQU6sWuEVC",
-        "name": "thumbnailCid",
-        "comment": "CID Pinata ảnh thumbnail",
+        "name": "thumbnailUrl",
+        "comment": "URL ảnh thumbnail từ Cloudinary",
         "dataType": "VARCHAR",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
-          "widthName": 73,
-          "widthComment": 137,
+          "widthName": 71,
+          "widthComment": 178,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1778732203314,
+          "updateAt": 1778739130465,
           "createAt": 1778731750995
         }
       },
@@ -2226,19 +2220,19 @@
         "id": "bKgiPmiyR8Y8UtiScwSCb",
         "tableId": "cZT2tSro1RLIf7KYmzm55",
         "name": "transactionHash",
-        "comment": "Hash giao dịch blockchain",
+        "comment": "Hash giao dịch mua hàng",
         "dataType": "VARCHAR",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 87,
-          "widthComment": 140,
+          "widthComment": 137,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1778732560749,
+          "updateAt": 1778738994083,
           "createAt": 1778732382627
         }
       },
@@ -2405,20 +2399,20 @@
       "shSsMyHF8MrKTy1qRiOLO": {
         "id": "shSsMyHF8MrKTy1qRiOLO",
         "tableId": "cZT2tSro1RLIf7KYmzm55",
-        "name": "rating",
-        "comment": "Sao đánh giá nhanh",
-        "dataType": "INT",
+        "name": "certificateCid",
+        "comment": "CID Pinata của certificate metadata JSON",
+        "dataType": "VARCHAR",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
-          "widthName": 60,
-          "widthComment": 107,
+          "widthName": 71,
+          "widthComment": 219,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1778732623324,
+          "updateAt": 1778739067546,
           "createAt": 1778732388783
         }
       },
@@ -2941,6 +2935,46 @@
           "updateAt": 1778733929677,
           "createAt": 1778733921850
         }
+      },
+      "QUZFrS0_URLcv9wbFkx7f": {
+        "id": "QUZFrS0_URLcv9wbFkx7f",
+        "tableId": "1B__LqNSjKqOCnMjKvc1Y",
+        "name": "metadataCid",
+        "comment": "CID Pinata của course snapshot JSON ",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 70,
+          "widthComment": 204,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778738834952,
+          "createAt": 1778738813867
+        }
+      },
+      "SRAoLPxUQ-BTZxs38IoaV": {
+        "id": "SRAoLPxUQ-BTZxs38IoaV",
+        "tableId": "cZT2tSro1RLIf7KYmzm55",
+        "name": "blockchainCourseId",
+        "comment": "ID khoá học trên Smart Contract",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 106,
+          "widthComment": 173,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1778738981951,
+          "createAt": 1778738954967
+        }
       }
     },
     "relationshipEntities": {
@@ -2955,7 +2989,7 @@
             "QJsDIK7Yk9IJoI0X6szMW"
           ],
           "x": 1320.1096,
-          "y": 957.3744333333333,
+          "y": 949.3744333333333,
           "direction": 1
         },
         "end": {
@@ -2963,8 +2997,8 @@
           "columnIds": [
             "b4k0aR-59GcKCnEkZjvlU"
           ],
-          "x": 487.1509,
-          "y": 464.0138,
+          "x": 488.1509,
+          "y": 428.0138,
           "direction": 2
         },
         "meta": {
@@ -2983,7 +3017,7 @@
             "QJsDIK7Yk9IJoI0X6szMW"
           ],
           "x": 1320.1096,
-          "y": 1096.0411,
+          "y": 1072.0411,
           "direction": 1
         },
         "end": {
@@ -2991,8 +3025,8 @@
           "columnIds": [
             "xweVAUuSZpPMsIutbI_C8"
           ],
-          "x": 915.896,
-          "y": 910.0012,
+          "x": 1002.896,
+          "y": 898.0012,
           "direction": 2
         },
         "meta": {
@@ -3011,7 +3045,7 @@
             "QJsDIK7Yk9IJoI0X6szMW"
           ],
           "x": 1320.1096,
-          "y": 1234.7077666666667,
+          "y": 1194.7077666666667,
           "direction": 1
         },
         "end": {
@@ -3020,7 +3054,7 @@
             "Yp6LhpUxu5OPscGgYnINR"
           ],
           "x": 892.1152999999999,
-          "y": 1673.6986,
+          "y": 1661.6986,
           "direction": 2
         },
         "meta": {
@@ -3038,8 +3072,8 @@
           "columnIds": [
             "wBgmg_MjWcbWGz4pgXApE"
           ],
-          "x": 487.1509,
-          "y": 160.0138,
+          "x": 488.1509,
+          "y": 148.0138,
           "direction": 2
         },
         "end": {
@@ -3048,7 +3082,7 @@
             "4N9pFBeyv6YoZYM1D-hKl"
           ],
           "x": 769.3145,
-          "y": 321.7315,
+          "y": 297.7315,
           "direction": 1
         },
         "meta": {
@@ -3066,8 +3100,8 @@
           "columnIds": [
             "wBgmg_MjWcbWGz4pgXApE"
           ],
-          "x": 127.90090000000001,
-          "y": 616.0138,
+          "x": 128.1509,
+          "y": 568.0138,
           "direction": 8
         },
         "end": {
@@ -3075,8 +3109,8 @@
           "columnIds": [
             "RXTpu_LmLNqxlIoxz2fWh"
           ],
-          "x": 514.896,
-          "y": 910.0012,
+          "x": 513.896,
+          "y": 898.0012,
           "direction": 1
         },
         "meta": {
@@ -3094,8 +3128,8 @@
           "columnIds": [
             "wBgmg_MjWcbWGz4pgXApE"
           ],
-          "x": 367.4009,
-          "y": 616.0138,
+          "x": 368.1509,
+          "y": 568.0138,
           "direction": 8
         },
         "end": {
@@ -3122,8 +3156,8 @@
           "columnIds": [
             "nRXTKi3a1iLZiLdqhE8b6"
           ],
-          "x": 715.396,
-          "y": 1106.0012000000002,
+          "x": 758.396,
+          "y": 1082.0012000000002,
           "direction": 8
         },
         "end": {

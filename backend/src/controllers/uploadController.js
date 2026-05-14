@@ -1,42 +1,30 @@
 /**
  * Upload Controller
- * Xử lý upload file (ảnh, video, PDF, ZIP...) lên Pinata IPFS.
+ * Phân luồng upload theo kiến trúc 4-service:
  *
- * Các route sử dụng controller này:
- *   POST /api/upload/file    — upload một file
- *   POST /api/upload/json    — upload JSON metadata (dùng cho NFT certificate...)
+ *  POST /api/upload/media  → Cloudinary (video, ảnh, PDF, slides...)
+ *  POST /api/upload/json   → Pinata IPFS (metadata JSON: course snapshot, certificate)
+ *  GET  /api/upload/ipfs/:cid → Chuyển CID thành URL Pinata Gateway
  */
 
-const { uploadFileToPinata, uploadJSONToPinata, getIpfsUrl } = require('../config/pinata');
+const { uploadToCloudinary, MEDIA_CONFIG, getResourceType } = require('../config/cloudinary');
+const { uploadJSONToPinata, getIpfsUrl }                    = require('../config/pinata');
 
-// File size limit: 100MB
-const MAX_FILE_SIZE = 100 * 1024 * 1024;
+// Tổng hợp tất cả MIME types được chấp nhận
+const ALL_ALLOWED_MIMES = Object.values(MEDIA_CONFIG).flatMap(c => c.mimeTypes);
+const MAX_SIZE_BYTES     = 500 * 1024 * 1024; // 500 MB hard limit
 
-// Các loại MIME được chấp nhận
-const ALLOWED_MIME_TYPES = [
-  // Ảnh
-  'image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml',
-  // Video
-  'video/mp4', 'video/webm', 'video/ogg',
-  // Tài liệu
-  'application/pdf',
-  'application/zip', 'application/x-zip-compressed',
-  'application/json',
-  'text/plain', 'text/markdown',
-];
-
-/**
- * POST /api/upload/file
- * Upload một file lên Pinata IPFS.
- *
- * Request: multipart/form-data
- *   - file: file cần upload
- *   - folder (optional): tên nhóm/thư mục trên Pinata (vd: 'avatars', 'lessons')
- *
- * Response 200:
- *   { cid, url, fileName, mimeType, size }
- */
-const uploadFile = async (req, res) => {
+// ---------------------------------------------------------------------------
+// POST /api/upload/media
+// Upload file media (video, ảnh, PDF...) lên Cloudinary.
+//
+// Request: multipart/form-data
+//   - file   : file cần upload
+//   - folder : thư mục trên Cloudinary (vd: 'avatars', 'lessons', 'courses')
+//
+// Response 200: { url, publicId, resourceType, fileName, mimeType, size }
+// ---------------------------------------------------------------------------
+const uploadMedia = async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ message: 'No file provided' });
@@ -46,51 +34,51 @@ const uploadFile = async (req, res) => {
     const folder = req.body.folder || 'uploads';
 
     // Kiểm tra MIME type
-    if (!ALLOWED_MIME_TYPES.includes(mimetype)) {
+    if (!ALL_ALLOWED_MIMES.includes(mimetype)) {
       return res.status(400).json({
         message: 'File type not allowed',
-        allowedTypes: ALLOWED_MIME_TYPES,
+        allowedTypes: ALL_ALLOWED_MIMES,
       });
     }
 
     // Kiểm tra kích thước
-    if (size > MAX_FILE_SIZE) {
+    if (size > MAX_SIZE_BYTES) {
       return res.status(400).json({
-        message: `File size exceeds limit (max: ${MAX_FILE_SIZE / 1024 / 1024}MB)`,
+        message: `File size exceeds limit (max: ${MAX_SIZE_BYTES / 1024 / 1024}MB)`,
       });
     }
 
-    const { cid, url } = await uploadFileToPinata(buffer, originalname, folder);
+    const result = await uploadToCloudinary(buffer, originalname, folder, mimetype);
 
     res.status(200).json({
-      message: 'File uploaded successfully',
-      cid,
-      url,
-      fileName: originalname,
-      mimeType: mimetype,
+      message: 'File uploaded to Cloudinary successfully',
+      url:          result.url,
+      publicId:     result.publicId,
+      resourceType: result.resourceType,
+      fileName:     originalname,
+      mimeType:     mimetype,
       size,
     });
 
   } catch (error) {
-    console.error('Upload error:', error.message);
+    console.error('Cloudinary upload error:', error.message);
     res.status(500).json({
-      message: 'Failed to upload file to Pinata',
+      message: 'Failed to upload file to Cloudinary',
       error: error.message,
     });
   }
 };
 
-/**
- * POST /api/upload/json
- * Upload JSON metadata lên Pinata IPFS.
- * Dùng cho: certificate metadata, NFT metadata, course metadata...
- *
- * Request body (application/json):
- *   { name: string, data: object }
- *
- * Response 200:
- *   { cid, url }
- */
+// ---------------------------------------------------------------------------
+// POST /api/upload/json
+// Upload JSON metadata lên Pinata IPFS.
+// Dùng cho: certificate metadata, course snapshot (ghi vào smart contract).
+//
+// Request body (application/json):
+//   { name: string, data: object }
+//
+// Response 200: { cid, url }
+// ---------------------------------------------------------------------------
 const uploadJSON = async (req, res) => {
   try {
     const { name, data } = req.body;
@@ -102,13 +90,13 @@ const uploadJSON = async (req, res) => {
     const { cid, url } = await uploadJSONToPinata(data, name || 'metadata');
 
     res.status(200).json({
-      message: 'JSON uploaded successfully',
+      message: 'JSON metadata uploaded to Pinata IPFS successfully',
       cid,
       url,
     });
 
   } catch (error) {
-    console.error('JSON upload error:', error.message);
+    console.error('Pinata JSON upload error:', error.message);
     res.status(500).json({
       message: 'Failed to upload JSON to Pinata',
       error: error.message,
@@ -116,11 +104,10 @@ const uploadJSON = async (req, res) => {
   }
 };
 
-/**
- * GET /api/upload/url/:cid
- * Chuyển CID thành URL đầy đủ của Pinata Gateway.
- * Tiện cho frontend khi chỉ lưu CID trong database.
- */
+// ---------------------------------------------------------------------------
+// GET /api/upload/ipfs/:cid
+// Chuyển CID Pinata thành URL đầy đủ.
+// ---------------------------------------------------------------------------
 const getCidUrl = (req, res) => {
   const { cid } = req.params;
   if (!cid) {
@@ -129,4 +116,4 @@ const getCidUrl = (req, res) => {
   res.status(200).json({ cid, url: getIpfsUrl(cid) });
 };
 
-module.exports = { uploadFile, uploadJSON, getCidUrl };
+module.exports = { uploadMedia, uploadJSON, getCidUrl };

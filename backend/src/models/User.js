@@ -2,36 +2,33 @@
  * User Model
  * Cấu trúc dữ liệu cho một user trong hệ thống.
  *
- * Lưu ý thiết kế:
- *  - `walletAddress` là primary key (Ethereum address, lowercase).
- *  - KHÔNG có `purchasedCourses` — thông tin mua hàng đã được lưu đầy đủ
- *    trong Enrollment collection (tránh trùng lặp & mất đồng bộ).
- *  - `enrolledCourses` dùng để hiển thị nhanh "Khóa học đang học" mà không cần
- *    query Enrollment mỗi lần (denormalization có chủ đích).
- *  - `completedCourses` — subset của enrolledCourses, tiện cho badge/progress.
- *  - `avatar` lưu CID của Pinata IPFS (hoặc URL đầy đủ). Dùng getIpfsUrl(cid)
- *    để chuyển thành URL hiển thị.
+ * Kiến trúc lưu trữ:
+ *  - Firebase: lưu toàn bộ profile, avatarUrl (Cloudinary)
+ *  - Cloudinary: lưu ảnh avatar (avatarUrl)
+ *  - Smart Contract: nguồn truth cho enrollment và certificate
+ *    (enrolledCourses ở đây là cache nhanh, truth thật nằm on-chain)
+ *
+ *  `walletAddress` là primary key — Ethereum address lowercase.
+ *  `enrolledCourses` là denormalized cache; truth thật là contract.isEnrolled().
  */
 const userSchema = {
   walletAddress: String,      // Địa chỉ ví Ethereum (primary key, lowercase)
   username: String,           // Tên hiển thị
   email: String,              // Email (tuỳ chọn)
   fullName: String,           // Họ tên đầy đủ
-  avatar: String,             // CID Pinata IPFS hoặc URL ảnh avatar
+  avatarUrl: String,          // URL ảnh avatar từ Cloudinary
   bio: String,                // Giới thiệu bản thân
-  enrolledCourses: Array,     // IDs khóa học đã đăng ký / đang học
-  completedCourses: Array,    // IDs khóa học đã hoàn thành
-  bookmarkedCourses: Array,   // IDs khóa học đã bookmark
+  enrolledCourses: Array,     // Cache IDs khoá học đang học (sync từ contract)
+  completedCourses: Array,    // Cache IDs khoá học đã hoàn thành
   role: String,               // 'student' | 'instructor' | 'admin'
-  reputation: Number,         // Điểm uy tín tích luỹ
-  totalSpent: Number,         // Tổng ETH đã chi (số thực, vd: 1.75)
+  totalSpent: Number,         // Tổng ETH đã chi (cache từ blockchain)
   joinedAt: Date,             // Ngày đăng ký tài khoản
   lastLogin: Date,            // Lần đăng nhập cuối
   isActive: Boolean,          // Trạng thái tài khoản
 };
 
 /**
- * Validate dữ liệu User trước khi ghi vào Firestore.
+ * Validate dữ liệu User trước khi ghi vào Firebase.
  * @param {object} data
  * @returns {string[]} Danh sách lỗi (rỗng = hợp lệ)
  */

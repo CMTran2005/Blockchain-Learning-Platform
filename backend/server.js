@@ -14,8 +14,10 @@ const lessonRoutes = require('./src/routes/lessonRoutes');
 const reviewRoutes = require('./src/routes/reviewRoutes');
 const uploadRoutes = require('./src/routes/uploadRoutes');
 
-// Pinata connection test
-const { testPinataConnection } = require('./src/config/pinata');
+// Service connection tests
+const { testPinataConnection }      = require('./src/config/pinata');
+const { testCloudinaryConnection }  = require('./src/config/cloudinary');
+const { isContractReady }           = require('./src/config/contract');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -87,13 +89,16 @@ app.use(errorHandler);
 app.listen(PORT, async () => {
   console.log(`\n🚀 Server running on http://localhost:${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`📚 API Documentation:`);
+  console.log(`📚 API:`);
   console.log(`   - Courses:     http://localhost:${PORT}/api/courses`);
   console.log(`   - Users:       http://localhost:${PORT}/api/users`);
   console.log(`   - Enrollments: http://localhost:${PORT}/api/enrollments`);
   console.log(`   - Upload:      http://localhost:${PORT}/api/upload`);
-  // Kiểm tra kết nối Pinata IPFS
+  console.log(`\n🔌 Checking service connections...`);
   await testPinataConnection();
+  await testCloudinaryConnection();
+  console.log(`   Smart Contract: ${isContractReady() ? '✅ Connected' : '⚠️  Not configured'}`);
+  console.log('');
 });
 
 module.exports = app;
