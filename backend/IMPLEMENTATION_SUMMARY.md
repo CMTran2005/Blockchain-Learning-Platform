@@ -354,32 +354,32 @@ POST   /api/enrollments/:enrollmentId/review - Gửi đánh giá
 
 ```
 backend/
-├── server.js                           ✅ Main Express server
-├── package.json                        ✅ Updated with scripts
-├── .env                               ✅ Environment config
-├── .env.example                       ✅ Example config
-├── README.md                          ✅ Full API documentation
+├── server.js                         Main Express server
+├── package.json                      Updated with scripts
+├── .env                              Environment config
+├── .env.example                      Example config
+├── README.md                         Full API documentation
 ├── src/
 │   ├── config/
-│   │   ├── firebase.js               ✅ Firebase setup
-│   │   ├── blockchain.js             ✅ Blockchain setup
-│   │   └── serviceAccountKey.json    ⚠️ Need to add
+│   │   ├── firebase.js               Firebase setup
+│   │   ├── blockchain.js             Blockchain setup
+│   │   └── serviceAccountKey.json    Need to add
 │   ├── controllers/
-│   │   ├── courseController.js       ✅ 6 functions
-│   │   ├── userController.js         ✅ 5 functions (NEW)
-│   │   └── enrollController.js       ✅ 5 functions (Updated)
+│   │   ├── courseController.js       6 functions
+│   │   ├── userController.js         5 functions
+│   │   └── enrollController.js       5 functions
 │   ├── routes/
-│   │   ├── courseRoutes.js           ✅ 6 routes (NEW)
-│   │   ├── userRoutes.js             ✅ 5 routes (NEW)
-│   │   └── enrollRoutes.js           ✅ 5 routes (Updated)
+│   │   ├── courseRoutes.js           6 routes
+│   │   ├── userRoutes.js             5 routes
+│   │   └── enrollRoutes.js           5 routes
 │   ├── models/
-│   │   ├── Course.js                 ✅ Schema + validation
-│   │   ├── User.js                   ✅ Schema + validation
-│   │   └── Enrollment.js             ✅ Schema + validation
+│   │   ├── Course.js                 Schema + validation
+│   │   ├── User.js                   Schema + validation
+│   │   └── Enrollment.js             Schema + validation
 │   └── middlewares/
-│       ├── errorHandler.js           ✅ Error handling
-│       ├── auth.js                   ✅ Authentication
-│       └── validation.js             ✅ Input validation
+│       ├── errorHandler.js           Error handling
+│       ├── auth.js                   Authentication
+│       └── validation.js             Input validation
 ```
 
 ---
