@@ -1,17 +1,15 @@
 {
-  "name": "smart-contract",
+  "name": "blockchain-learning-smart-contract",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Smart contracts for Blockchain Learning Platform",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "npx hardhat compile",
+    "deploy":  "npx hardhat run scripts/deploy.js --network ganache",
+    "test":    "npx hardhat test",
+    "clean":   "npx hardhat clean"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
-    "hardhat": "^2.28.6"
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
   }
 }
