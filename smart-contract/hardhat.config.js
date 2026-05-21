@@ -4,15 +4,7 @@ require('@nomicfoundation/hardhat-toolbox');
 
 /** @type {HardhatUserConfig} */
 const config = {
-  solidity: {
-    version: '0.8.20',
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
-      },
-    },
-  },
+  solidity: "0.8.28",
   networks: {
     // Ganache local (mặc định)
     ganache: {

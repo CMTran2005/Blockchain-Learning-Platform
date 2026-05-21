@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const adminAuth = require('../middlewares/adminAuth');
 const {
   getAllCourses,
   getCourseById,
+  getNextBlockchainId,
   createCourse,
   updateCourse,
   deleteCourse,
@@ -11,24 +13,28 @@ const {
 
 /**
  * Course Routes
+ * GET routes are public, write routes require admin auth.
  */
 
-// Get all courses
+// Public — Get all courses
 router.get('/', getAllCourses);
 
-// Search courses
+// Public — Search courses
 router.get('/search', searchCourses);
 
-// Get course by ID
+// Public — Next available blockchain course id
+router.get('/blockchain/next-id', getNextBlockchainId);
+
+// Public — Get course by ID
 router.get('/:courseId', getCourseById);
 
-// Create new course (POST must be after specific GET routes)
-router.post('/', createCourse);
+// Admin — Create new course
+router.post('/', adminAuth, createCourse);
 
-// Update course
-router.put('/:courseId', updateCourse);
+// Admin — Update course
+router.put('/:courseId', adminAuth, updateCourse);
 
-// Delete course
-router.delete('/:courseId', deleteCourse);
+// Admin — Delete course
+router.delete('/:courseId', adminAuth, deleteCourse);
 
 module.exports = router;

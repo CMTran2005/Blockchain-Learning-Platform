@@ -8,7 +8,7 @@
  */
 
 const { uploadToCloudinary, MEDIA_CONFIG, getResourceType } = require('../config/cloudinary');
-const { uploadJSONToPinata, getIpfsUrl }                    = require('../config/pinata');
+const { uploadJSONToPinata, uploadFileToPinata, getIpfsUrl } = require('../config/pinata');
 
 // Tổng hợp tất cả MIME types được chấp nhận
 const ALL_ALLOWED_MIMES = Object.values(MEDIA_CONFIG).flatMap(c => c.mimeTypes);
@@ -116,4 +116,56 @@ const getCidUrl = (req, res) => {
   res.status(200).json({ cid, url: getIpfsUrl(cid) });
 };
 
-module.exports = { uploadMedia, uploadJSON, getCidUrl };
+// ---------------------------------------------------------------------------
+// POST /api/upload/ipfs
+// Upload file (video, etc.) lên Pinata IPFS.
+//
+// Request: multipart/form-data — file, optional folder
+// Response 200: { cid, url, fileName, mimeType, size }
+// ---------------------------------------------------------------------------
+const VIDEO_MIMES = [
+  'video/mp4', 'video/webm', 'video/ogg', 'video/quicktime', 'video/x-msvideo',
+];
+
+const uploadIpfs = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file provided' });
+    }
+
+    const { originalname, mimetype, size, buffer } = req.file;
+    const folder = req.body.folder || 'courses';
+
+    if (!VIDEO_MIMES.includes(mimetype)) {
+      return res.status(400).json({
+        message: 'Only video files are allowed for IPFS upload',
+        allowedTypes: VIDEO_MIMES,
+      });
+    }
+
+    if (size > MAX_SIZE_BYTES) {
+      return res.status(400).json({
+        message: `File size exceeds limit (max: ${MAX_SIZE_BYTES / 1024 / 1024}MB)`,
+      });
+    }
+
+    const { cid, url } = await uploadFileToPinata(buffer, originalname, folder);
+
+    res.status(200).json({
+      message: 'Video uploaded to Pinata IPFS successfully',
+      cid,
+      url,
+      fileName: originalname,
+      mimeType: mimetype,
+      size,
+    });
+  } catch (error) {
+    console.error('Pinata file upload error:', error.message);
+    res.status(500).json({
+      message: 'Failed to upload file to Pinata',
+      error: error.message,
+    });
+  }
+};
+
+module.exports = { uploadMedia, uploadJSON, uploadIpfs, getCidUrl };

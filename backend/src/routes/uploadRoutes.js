@@ -10,7 +10,7 @@ const express = require('express');
 const multer  = require('multer');
 const router  = express.Router();
 
-const { uploadMedia, uploadJSON, getCidUrl } = require('../controllers/uploadController');
+const { uploadMedia, uploadJSON, uploadIpfs, getCidUrl } = require('../controllers/uploadController');
 
 // Multer: lưu vào memory (pass Buffer trực tiếp cho Cloudinary / Pinata)
 const upload = multer({
@@ -23,6 +23,9 @@ router.post('/media', upload.single('file'), uploadMedia);
 
 // POST /api/upload/json  — upload JSON metadata lên Pinata IPFS
 router.post('/json', uploadJSON);
+
+// POST /api/upload/ipfs  — upload video file lên Pinata IPFS
+router.post('/ipfs', upload.single('file'), uploadIpfs);
 
 // GET /api/upload/ipfs/:cid — chuyển CID thành URL Pinata Gateway
 router.get('/ipfs/:cid', getCidUrl);

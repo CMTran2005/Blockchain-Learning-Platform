@@ -1,9 +1,14 @@
-const { db, admin }              = require('../config/firebase');
-const { validateCourse }         = require('../models/Course');
-const { uploadJSONToPinata }     = require('../config/pinata');
+const { db, admin } = require('../config/firebase');
+const { validateCourse } = require('../models/Course');
+const { uploadJSONToPinata } = require('../config/pinata');
 const { contract, isContractReady } = require('../config/contract');
 const { filterCourse, filterList } = require('../utils/responseFilter');
-const { ethers }            = require('ethers');
+const {
+  getNextAvailableBlockchainId,
+  isBlockchainCourseRegistered,
+  getOnChainPriceEth,
+} = require('../utils/blockchainCourse');
+const { ethers } = require('ethers');
 
 /**
  * GET /api/courses
@@ -15,7 +20,7 @@ const getAllCourses = async (req, res) => {
 
     let queryRef = db.collection('courses').where('status', '==', status || 'active');
     if (category) queryRef = queryRef.where('category', '==', category);
-    if (level)    queryRef = queryRef.where('level',    '==', level);
+    if (level) queryRef = queryRef.where('level', '==', level);
 
     const snapshot = await queryRef.get();
     const courses = snapshot.docs.map(doc => ({ courseId: doc.id, ...doc.data() }));
@@ -33,7 +38,19 @@ const getAllCourses = async (req, res) => {
 const getCourseById = async (req, res) => {
   try {
     const { courseId } = req.params;
-    const doc = await db.collection('courses').doc(courseId).get();
+    let doc = await db.collection('courses').doc(courseId).get();
+
+    // Lookup by blockchainCourseId when URL uses numeric id (e.g. /course/21)
+    if (!doc.exists) {
+      const chainId = parseInt(courseId, 10);
+      if (!isNaN(chainId)) {
+        const snap = await db.collection('courses')
+          .where('blockchainCourseId', '==', chainId)
+          .limit(1)
+          .get();
+        if (!snap.empty) doc = snap.docs[0];
+      }
+    }
 
     if (!doc.exists) {
       return res.status(404).json({ message: 'Course not found' });
@@ -46,104 +63,147 @@ const getCourseById = async (req, res) => {
 };
 
 /**
+ * GET /api/courses/blockchain/next-id
+ * Gợi ý blockchain course id tiếp theo (chưa tồn tại on-chain).
+ */
+const getNextBlockchainId = async (req, res) => {
+  try {
+    const nextId = await getNextAvailableBlockchainId();
+    res.status(200).json({ blockchainCourseId: nextId });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+/**
  * POST /api/courses
  * Tạo khoá học mới (Admin only).
- *
- * Luồng:
- *  1. Validate input
- *  2. Lưu course vào Firebase
- *  3. Upload course snapshot JSON lên Pinata → nhận metadataCid
- *  4. Cập nhật metadataCid vào Firebase
- *  5. (Nếu contract sẵn sàng) Gọi contract.createCourse(blockchainCourseId, cid, priceWei)
  */
 const createCourse = async (req, res) => {
   try {
-    const { title, description, instructor, price, category, level, duration, blockchainCourseId } = req.body;
+    if (!req.body || typeof req.body !== 'object') {
+      return res.status(400).json({
+        message: 'Request body is required (JSON). Send Content-Type: application/json',
+      });
+    }
+
+    const {
+      title, description, instructor, price, category, level, duration,
+      blockchainCourseId: requestedChainId,
+      imageUrl, videoUrl, videoProvider, videoCid, tags,
+    } = req.body;
 
     const errors = validateCourse(req.body);
     if (errors.length > 0) {
       return res.status(400).json({ message: 'Validation failed', errors });
     }
 
-    const docRef  = db.collection('courses').doc();
+    const priceEth = String(price);
+    let blockchainCourseId = requestedChainId ? parseInt(requestedChainId, 10) : null;
+
+    if (blockchainCourseId && await isBlockchainCourseRegistered(blockchainCourseId)) {
+      return res.status(409).json({
+        message: `Blockchain course ID ${blockchainCourseId} is already registered on-chain. Choose another ID.`,
+      });
+    }
+
+    if (!blockchainCourseId) {
+      blockchainCourseId = await getNextAvailableBlockchainId();
+    } else {
+      blockchainCourseId = await getNextAvailableBlockchainId(blockchainCourseId);
+    }
+
+    const docRef = db.collection('courses').doc();
     const courseId = docRef.id;
 
     const newCourse = {
       courseId,
-      blockchainCourseId: blockchainCourseId ?? null,
+      blockchainCourseId,
       title,
-      description:          description || '',
+      description: description || '',
       instructor,
       price,
+      priceEth,
       category,
-      level:                level || 'beginner',
-      duration:             duration || 0,
-      imageUrl:             req.body.imageUrl || '',    // URL Cloudinary (upload trước qua /api/upload/media)
-      lessonIds:            [],
-      averageRating:        0,
-      reviewCount:          0,
-      enrolledCount:        0,
+      level: level || 'beginner',
+      duration: duration || 0,
+      imageUrl: imageUrl || '',
+      videoUrl: videoUrl || '',
+      videoProvider: videoProvider || 'youtube',
+      videoCid: videoCid || '',
+      lessonIds: [],
+      averageRating: 0,
+      reviewCount: 0,
+      enrolledCount: 0,
       certificateRewardable: req.body.certificateRewardable || false,
-      tags:                 req.body.tags || [],
-      status:               'active',
-      metadataCid:          '',                         // Sẽ cập nhật sau khi upload Pinata
-      createdAt:            new Date().toISOString(),
-      updatedAt:            new Date().toISOString(),
-      createdBy:            req.user?.walletAddress || 'admin',
+      tags: tags || [],
+      status: 'active',
+      metadataCid: '',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      createdBy: req.user?.walletAddress || 'admin',
     };
 
-    // Bước 1: Lưu vào Firebase
     await docRef.set(newCourse);
 
-    // Bước 2: Upload course snapshot lên Pinata IPFS
     let metadataCid = '';
     let metadataUrl = '';
     try {
       const snapshot = {
         courseId,
-        blockchainCourseId: blockchainCourseId ?? null,
+        blockchainCourseId,
         title,
         instructor,
         price,
+        priceEth,
         category,
         level: level || 'beginner',
+        imageUrl: newCourse.imageUrl,
+        videoUrl: newCourse.videoUrl,
+        videoProvider: newCourse.videoProvider,
+        videoCid: newCourse.videoCid,
         createdAt: newCourse.createdAt,
         createdBy: newCourse.createdBy,
       };
       const pinataResult = await uploadJSONToPinata(snapshot, `course_${courseId}`);
       metadataCid = pinataResult.cid;
       metadataUrl = pinataResult.url;
-
-      // Cập nhật CID vào Firebase
       await docRef.update({ metadataCid });
+      newCourse.metadataCid = metadataCid;
     } catch (pinataErr) {
       console.warn('⚠️  Pinata upload failed (non-blocking):', pinataErr.message);
     }
 
-    // Bước 3: Đăng ký on-chain nếu contract sẵn sàng và blockchainCourseId được cung cấp
     let contractTx = null;
+    let onChainWarning = null;
     if (isContractReady() && blockchainCourseId && metadataCid) {
       try {
-        const priceWei = ethers.parseEther(String(price));
+        const priceWei = ethers.parseEther(priceEth);
         const tx = await contract.createCourse(blockchainCourseId, metadataCid, priceWei);
         await tx.wait();
         contractTx = tx.hash;
         console.log(`✅ Course ${blockchainCourseId} registered on-chain: ${tx.hash}`);
       } catch (contractErr) {
-        console.warn('⚠️  Contract createCourse failed (non-blocking):', contractErr.message);
+        onChainWarning = contractErr.message;
+        console.warn('⚠️  Contract createCourse failed:', contractErr.message);
       }
+    } else if (isContractReady() && !metadataCid) {
+      onChainWarning = 'Pinata metadata upload failed — course saved off-chain only';
     }
 
     res.status(201).json({
       message: 'Course created successfully',
       courseId,
+      blockchainCourseId,
       metadataCid,
       metadataUrl,
       contractTx,
+      onChainWarning,
       ...filterCourse(newCourse),
     });
 
   } catch (error) {
+    console.error("=== createCourse ERROR ===", error);
     res.status(500).json({ message: 'Error creating course', error: error.message });
   }
 };
@@ -154,17 +214,46 @@ const createCourse = async (req, res) => {
  */
 const updateCourse = async (req, res) => {
   try {
-    const { courseId } = req.params;
+    if (!req.body || typeof req.body !== 'object') {
+      return res.status(400).json({
+        message: 'Request body is required (JSON). Send Content-Type: application/json',
+      });
+    }
 
-    if (req.body.title || req.body.price) {
-      const errors = validateCourse({ title: req.body.title, ...req.body });
+    const { courseId } = req.params;
+    const doc = await db.collection('courses').doc(courseId).get();
+    if (!doc.exists) {
+      return res.status(404).json({ message: 'Course not found' });
+    }
+
+    if (req.body.title || req.body.price !== undefined) {
+      const errors = validateCourse({ title: req.body.title || doc.data().title, ...req.body });
       if (errors.length > 0) {
         return res.status(400).json({ message: 'Validation failed', errors });
       }
     }
 
-    // Không cho phép update courseId, metadataCid (immutable sau khi ghi on-chain)
     const { courseId: _, metadataCid: __, ...safeUpdate } = req.body;
+    if (safeUpdate.price !== undefined) {
+      safeUpdate.priceEth = String(safeUpdate.price);
+    }
+
+    const existing = doc.data();
+    const chainId = safeUpdate.blockchainCourseId ?? existing.blockchainCourseId;
+
+    if (
+      safeUpdate.price !== undefined &&
+      chainId &&
+      (await isBlockchainCourseRegistered(chainId))
+    ) {
+      const onChainEth = await getOnChainPriceEth(chainId);
+      if (onChainEth && onChainEth !== String(safeUpdate.price)) {
+        return res.status(400).json({
+          message: `Price on blockchain is ${onChainEth} ETH. Create a new course with a new Blockchain ID to change price on-chain.`,
+          onChainPriceEth: onChainEth,
+        });
+      }
+    }
 
     await db.collection('courses').doc(courseId).update({
       ...safeUpdate,
@@ -173,13 +262,13 @@ const updateCourse = async (req, res) => {
 
     res.status(200).json({ message: 'Course updated successfully' });
   } catch (error) {
+    console.error("=== updateCourse ERROR ===", error);
     res.status(500).json({ message: 'Error updating course', error: error.message });
   }
 };
 
 /**
  * DELETE /api/courses/:courseId
- * Xoá khoá học (Admin only).
  */
 const deleteCourse = async (req, res) => {
   try {
@@ -199,7 +288,6 @@ const deleteCourse = async (req, res) => {
 
 /**
  * GET /api/courses/search
- * Tìm kiếm khoá học theo từ khoá.
  */
 const searchCourses = async (req, res) => {
   try {
@@ -207,7 +295,7 @@ const searchCourses = async (req, res) => {
 
     let queryRef = db.collection('courses').where('status', '==', 'active');
     if (category) queryRef = queryRef.where('category', '==', category);
-    if (level)    queryRef = queryRef.where('level',    '==', level);
+    if (level) queryRef = queryRef.where('level', '==', level);
 
     const snapshot = await queryRef.get();
     let courses = snapshot.docs.map(doc => ({ courseId: doc.id, ...doc.data() }));
@@ -226,4 +314,12 @@ const searchCourses = async (req, res) => {
   }
 };
 
-module.exports = { getAllCourses, getCourseById, createCourse, updateCourse, deleteCourse, searchCourses };
+module.exports = {
+  getAllCourses,
+  getCourseById,
+  getNextBlockchainId,
+  createCourse,
+  updateCourse,
+  deleteCourse,
+  searchCourses,
+};

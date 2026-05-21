@@ -23,6 +23,10 @@ const courseSchema = {
   level: String,                  // 'beginner' | 'intermediate' | 'advanced'
   duration: Number,               // Tổng thời gian học (giờ)
   imageUrl: String,               // URL ảnh bìa từ Cloudinary
+  videoUrl: String,               // URL video (YouTube embed, Cloudinary, Pinata gateway)
+  videoProvider: String,          // 'youtube' | 'vimeo' | 'cloudinary' | 'pinata'
+  videoCid: String,               // Pinata CID khi video lưu trên IPFS
+  priceEth: String,               // Giá ETH dạng string (đồng bộ với on-chain)
   lessonIds: Array,               // Mảng ID lessons (denormalized để load nhanh)
   averageRating: Number,          // Đánh giá trung bình (0-5)
   reviewCount: Number,            // Tổng số review đã duyệt

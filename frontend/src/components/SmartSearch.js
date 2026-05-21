@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Fuse from 'fuse.js';
-import coursesData from '../utils/courses.json';
 import { useLanguage } from '../context/LanguageContext';
 
 // Fuse.js config — weights each field differently for relevance
@@ -11,15 +10,13 @@ const fuseOptions = {
     { name: 'category',    weight: 0.15 },
     { name: 'description', weight: 0.10 },
   ],
-  threshold: 0.45,      // 0 = exact match, 1 = match anything (0.45 is a sweet spot)
+  threshold: 0.45,
   includeScore: true,
   minMatchCharLength: 2,
   ignoreLocation: true,
 };
 
-const fuse = new Fuse(coursesData, fuseOptions);
-
-const SmartSearch = ({ onResultsChange, onQueryChange }) => {
+const SmartSearch = ({ coursesData, onResultsChange, onQueryChange }) => {
   const { t } = useLanguage();
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
@@ -29,9 +26,11 @@ const SmartSearch = ({ onResultsChange, onQueryChange }) => {
   const dropdownRef = useRef(null);
   const debounceRef = useRef(null);
 
+  // Rebuild Fuse index when coursesData changes
+  const fuse = useMemo(() => new Fuse(coursesData || [], fuseOptions), [coursesData]);
+
   const runSearch = useCallback((q) => {
     if (!q.trim()) {
-      // Empty query — show all courses
       onResultsChange(null);
       setSuggestions([]);
       return;
@@ -39,18 +38,15 @@ const SmartSearch = ({ onResultsChange, onQueryChange }) => {
 
     const results = fuse.search(q);
     const matchedCourses = results.map(r => r.item);
-
-    // Update parent grid
     onResultsChange(matchedCourses);
 
-    // Build suggestions for dropdown (top 5)
     setSuggestions(results.slice(0, 5).map(r => ({
       id: r.item.id,
       title: r.item.title,
       category: r.item.category,
       score: Math.round((1 - r.score) * 100),
     })));
-  }, [onResultsChange]);
+  }, [onResultsChange, fuse]);
 
   const handleChange = (e) => {
     const q = e.target.value;
@@ -58,7 +54,6 @@ const SmartSearch = ({ onResultsChange, onQueryChange }) => {
     onQueryChange(q);
     setActiveIndex(-1);
 
-    // Debounce 200ms for smooth typing experience
     clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {
       runSearch(q);
@@ -69,7 +64,8 @@ const SmartSearch = ({ onResultsChange, onQueryChange }) => {
   const handleSuggestionClick = (course) => {
     setQuery(course.title);
     setShowDropdown(false);
-    onResultsChange([coursesData.find(c => c.id === course.id)]);
+    const found = (coursesData || []).find(c => c.id === course.id);
+    onResultsChange(found ? [found] : []);
   };
 
   const handleKeyDown = (e) => {

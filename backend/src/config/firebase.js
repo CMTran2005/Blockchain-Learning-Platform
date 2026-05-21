@@ -1,10 +1,21 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json');
+const path = require('path');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+let db = null;
 
-const db = admin.firestore();
+try {
+  const keyPath = path.join(__dirname, '../../serviceAccountKey.json');
+  const serviceAccount = require(keyPath);
+
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+
+  db = admin.firestore();
+  console.log('✅ Firebase Firestore connected');
+} catch (err) {
+  console.warn('⚠️  Firebase not configured:', err.message);
+  console.warn('   → Backend will run without Firestore. Add serviceAccountKey.json to enable.');
+}
 
 module.exports = { admin, db };
